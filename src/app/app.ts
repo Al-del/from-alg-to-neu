@@ -54,7 +54,6 @@ export class App implements OnDestroy {
   registrationData = { name: '', email: '', phone: '', school: '', grade: '', participation: 'full' };
 
   private emailjs: any = null;
-  private scrollObserver?: IntersectionObserver;
 
   readonly days: ScheduleDay[] = [
     {
@@ -176,27 +175,11 @@ export class App implements OnDestroy {
       this.updateCountdown();
       this.countdownInterval = setInterval(() => this.updateCountdown(), 1000);
 
-      // Scroll fade-in / fade-out via IntersectionObserver
-      this.scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            entry.target.classList.remove('is-gone');
-          } else if (entry.boundingClientRect.top < 0) {
-            entry.target.classList.add('is-gone');
-            entry.target.classList.remove('is-visible');
-          } else {
-            entry.target.classList.remove('is-visible', 'is-gone');
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('.scroll-fade').forEach(el => this.scrollObserver!.observe(el));
     });
   }
 
   ngOnDestroy() {
     if (this.countdownInterval) clearInterval(this.countdownInterval);
-    this.scrollObserver?.disconnect();
   }
 
   private updateCountdown() {

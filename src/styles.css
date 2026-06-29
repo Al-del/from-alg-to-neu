@@ -75,8 +75,8 @@ body {
 
 /* Featured card — used for the countdown widget */
 .card-featured {
-  background: linear-gradient(160deg, rgba(59,130,246,0.09) 0%, #1C1C1C 55%);
-  border: 1px solid var(--border-2);
+  background: #FFFFFF;
+  border: 1px solid rgba(59,130,246,0.2);
   position: relative;
   overflow: hidden;
 }
@@ -167,12 +167,12 @@ body {
 
 /* ── Countdown ─────────────────────────────────────────── */
 .countdown-cell {
-  background: linear-gradient(145deg, #0F172A 0%, #0C0C0C 100%);
-  border: 1px solid rgba(59,130,246,0.22);
+  background: #111111;
+  border: 1px solid #222222;
   border-radius: 8px;
-  padding: 16px 12px;
+  padding: 18px 12px;
   text-align: center;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  box-shadow: none;
 }
 
 /* ── Schedule tabs ─────────────────────────────────────── */
@@ -226,19 +226,3 @@ body {
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; }
 
-/* ── Scroll fade ─────────────────────────────────────────── */
-.scroll-fade {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1),
-              transform 0.5s cubic-bezier(0.16,1,0.3,1);
-}
-.scroll-fade.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.scroll-fade.is-gone {
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
