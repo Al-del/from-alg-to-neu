@@ -1,102 +1,87 @@
-<div style="min-height:100vh;" class="antialiased">
+<div class="antialiased">
 
   <!-- ─── Navigation ──────────────────────────────────────────────── -->
-  <nav class="nav-clean" style="position:fixed;top:0;left:0;right:0;z-index:50;">
-    <div style="max-width:72rem;margin:0 auto;padding:0 1.5rem;height:60px;display:flex;align-items:center;justify-content:space-between;">
-
-      <a href="#hero" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
-          <path d="M1 7h2.5L5 2l3 10 3-10 2 7 1.5-4L17 7h2" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span style="font-weight:700;font-size:14px;letter-spacing:-0.01em;color:#EDEDED;">From Algorithm to Neurons</span>
+  <nav class="global-nav">
+    <div class="global-nav-row">
+      <a href="#hero" class="nav-brand">
+        <img src="logo_event.png" alt="From Algorithm to Neurons" class="nav-brand-mark" />
+        <span class="nav-brand-name">From Algorithm to Neurons</span>
       </a>
 
-      <div class="hidden md:flex" style="gap:28px;">
-        <a href="#about" style="font-size:14px;text-decoration:none;color:#71717A;">About</a>
-        <a href="#age-groups" style="font-size:14px;text-decoration:none;color:#71717A;">Age Groups</a>
-        <a href="#schedule" style="font-size:14px;text-decoration:none;color:#71717A;">Schedule</a>
-        <a href="#volunteer" style="font-size:14px;text-decoration:none;color:#71717A;">Volunteer</a>
-        <a href="#register" style="font-size:14px;text-decoration:none;color:#71717A;">Register</a>
-      </div>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#age-groups">Age Groups</a></li>
+        <li><a class="nav-link" href="#schedule">Schedule</a></li>
+        <li><a class="nav-link" href="#volunteer">Volunteer</a></li>
+      </ul>
 
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div class="hidden sm:flex" style="align-items:center;gap:10px;">
-          <img src="ieee_logo.png" alt="IEEE Region 8 STEM & K-12" style="height:32px;width:auto;object-fit:contain;" />
-          <div style="width:1px;height:24px;background:#262626;"></div>
-          <img src="logo_ipv.png" alt="Informatică pentru Viitor" style="height:32px;width:auto;object-fit:contain;" />
-        </div>
-        <a href="#register" class="btn-primary" style="padding:8px 16px;font-size:13px;font-weight:600;border-radius:6px;text-decoration:none;display:inline-block;">
-          Register
-        </a>
+      <div class="nav-actions">
+        <a href="#register" class="btn btn--primary btn--nav">Register</a>
       </div>
     </div>
   </nav>
 
   <!-- ─── Hero ────────────────────────────────────────────────────── -->
-  <section id="hero" style="padding-top:60px;min-height:100vh;display:flex;align-items:center;padding-left:1.5rem;padding-right:1.5rem;">
-    <div style="max-width:72rem;margin:0 auto;width:100%;padding:5rem 0;" class="grid md:grid-cols-[3fr_2fr] gap-16 items-start">
+  <section id="hero" class="tile tile--dark tile--hero">
+    <div class="container-wide hero-grid">
 
-      <!-- Left: headline + CTA -->
       <div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
-          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);border-radius:6px;padding:5px 12px;">
-            <div style="width:6px;height:6px;background:#3B82F6;border-radius:50%;flex-shrink:0;"></div>
-            <span style="font-size:12px;font-weight:500;color:#60A5FA;">Aug 21–24, 2026</span>
-            <span style="color:rgba(59,130,246,0.35);">·</span>
-            <span style="font-size:12px;color:#60A5FA;">Constanta, Romania</span>
-          </div>
-          <div style="display:inline-flex;align-items:center;gap:7px;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.3);border-radius:6px;padding:5px 12px;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-            <a href="https://ieeer8.org/technical-activities/professional-and-educational-activities/programs-professional-and-educational-activities/acceleration-program/acceleration-program-description/" target="_blank" rel="noopener noreferrer" class="ieee-badge-link" style="font-size:12px;font-weight:600;color:#EAB308;letter-spacing:0.01em;text-decoration:underline;text-underline-offset:2px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;">IEEE Region 8 Acceleration Program Winner<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-          </div>
+        <div class="hero-eyebrows">
+          <span class="chip chip--on-dark">Aug 20–24, 2026 · Constanta, Romania</span>
+          <a href="https://ieeer8.org/technical-activities/professional-and-educational-activities/programs-professional-and-educational-activities/acceleration-program/acceleration-program-description/"
+             target="_blank" rel="noopener noreferrer" class="chip chip--on-dark">
+            IEEE Region 8 Acceleration Program Winner
+          </a>
         </div>
 
-        <h1 style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-0.035em;line-height:1.04;margin-bottom:24px;color:#EDEDED;">
-          From Algorithm<br>to <span style="color:#3B82F6;">Neurons</span>
+        <h1 class="t-hero-display hero-title">
+          From Algorithm<br>to <em>Neurons</em>
         </h1>
 
-        <p style="color:#71717A;font-size:16px;line-height:1.7;margin-bottom:32px;max-width:30rem;">
-          Four days of workshops, a competitive AI challenge, and a 24-hour hackathon —
+        <p class="t-lead-airy hero-lead">
+          Five days of workshops, a competitive AI challenge, and a hackathon —
           designed for middle and high school students passionate about signals and AI.
         </p>
 
-        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;">
-          <a href="#register" class="btn-primary" style="padding:11px 24px;font-size:14px;font-weight:600;border-radius:7px;text-decoration:none;display:inline-block;">
-            Register Now
-          </a>
-          <a href="#schedule" class="btn-secondary" style="padding:11px 24px;font-size:14px;font-weight:600;border-radius:7px;text-decoration:none;display:inline-block;">
-            View Schedule
-          </a>
+        <div class="hero-actions">
+          <a href="#register" class="btn btn--primary">Register Now</a>
+          <a href="#schedule" class="btn btn--ghost-on-dark">View Schedule</a>
         </div>
 
-        <!-- IEEE attribution -->
-        <div style="padding-top:24px;border-top:1px solid #262626;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-          <img src="ieee_logo.png" alt="IEEE Region 8 STEM & K-12" style="height:44px;width:auto;object-fit:contain;" />
-          <div style="width:1px;height:36px;background:#262626;flex-shrink:0;"></div>
-          <div style="display:flex;align-items:center;gap:10px;">
-            <img src="logo_ipv.png" alt="Informatică pentru Viitor" style="height:44px;width:auto;object-fit:contain;" />
-            <div>
-              <div style="font-size:13px;font-weight:600;color:#A1A1AA;">Informatică pentru Viitor</div>
-              <div style="font-size:11px;color:#52525B;margin-top:1px;">Host Organisation</div>
+        <div class="hero-partners">
+          <div class="partner-item">
+            <img src="ieee_logo.png" alt="IEEE Region 8 STEM & K-12" />
+          </div>
+          <div class="hero-partners-divider"></div>
+          <div class="partner-item">
+            <img src="logo_ipv.png" alt="Informatică pentru Viitor" />
+            <div class="hero-partners-text">
+              <span class="t-body-strong">Informatică pentru Viitor</span>
+              <span class="t-caption">Organizing Partner</span>
             </div>
           </div>
-          <div style="font-size:11px;color:#EAB308;font-weight:500;padding:3px 8px;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.2);border-radius:4px;white-space:nowrap;">Acceleration Program Winner</div>
+          <div class="hero-partners-divider"></div>
+          <div class="partner-item">
+            <img src="logo_umc.jpeg" alt="Maritime University of Constanta" class="hero-partners-logo-boxed" />
+            <div class="hero-partners-text">
+              <span class="t-body-strong">Maritime University of Constanta</span>
+              <span class="t-caption">Host University</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Right: countdown — featured card -->
-      <div class="card-featured" style="border-radius:12px;padding:24px;margin-top:2rem;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" aria-hidden="true">
+      <!-- Countdown -->
+      <div class="countdown-card">
+        <div class="countdown-card-head">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <circle cx="12" cy="12" r="10"></circle>
             <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
-          <span style="font-size:12px;font-weight:700;color:#111111;text-transform:uppercase;letter-spacing:0.09em;">Event Starts In</span>
+          <span class="t-caption-strong">Event Starts In</span>
         </div>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px;">
+        <div class="countdown-grid">
           @for (unit of [
             { label: 'Days',    value: countdown().days    },
             { label: 'Hours',   value: countdown().hours   },
@@ -104,28 +89,28 @@
             { label: 'Seconds', value: countdown().seconds }
           ]; track unit.label) {
             <div class="countdown-cell">
-              <div style="font-size:2.6rem;font-weight:800;font-variant-numeric:tabular-nums;color:#3B82F6;letter-spacing:-0.03em;line-height:1;margin-bottom:8px;">{{ pad(unit.value) }}</div>
-              <div style="font-size:13px;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;">{{ unit.label }}</div>
+              <div class="countdown-value">{{ pad(unit.value) }}</div>
+              <div class="countdown-label">{{ unit.label }}</div>
             </div>
           }
         </div>
 
-        <div style="padding-top:20px;border-top:1px solid #E5E7EB;display:flex;flex-direction:column;gap:12px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="color:#374151;font-size:15px;font-weight:600;">Duration</span>
-            <span style="color:#3B82F6;font-size:15px;font-weight:700;">4 Days</span>
+        <div class="countdown-facts">
+          <div class="countdown-fact">
+            <span class="countdown-fact-label">Duration</span>
+            <span class="countdown-fact-value">5 Days</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="color:#374151;font-size:15px;font-weight:600;">Hackathon</span>
-            <span style="color:#3B82F6;font-size:15px;font-weight:700;">24 Hours</span>
+          <div class="countdown-fact">
+            <span class="countdown-fact-label">Hackathon</span>
+            <span class="countdown-fact-value">24 Hours</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="color:#374151;font-size:15px;font-weight:600;">AI Competition</span>
-            <span style="color:#3B82F6;font-size:15px;font-weight:700;">3 Hours</span>
+          <div class="countdown-fact">
+            <span class="countdown-fact-label">AI Competition</span>
+            <span class="countdown-fact-value">3 Hours</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="color:#374151;font-size:15px;font-weight:600;">Age Groups</span>
-            <span style="color:#3B82F6;font-size:15px;font-weight:700;">2 Tracks</span>
+          <div class="countdown-fact">
+            <span class="countdown-fact-label">Age Groups</span>
+            <span class="countdown-fact-value">2 Tracks</span>
           </div>
         </div>
       </div>
@@ -134,68 +119,39 @@
   </section>
 
   <!-- ─── Age Groups ───────────────────────────────────────────── -->
-  <section id="age-groups" style="padding:6rem 1.5rem;background:#111111;">
-    <div class="section-divider"></div>
-    <div style="max-width:72rem;margin:3rem auto 0;">
+  <section id="age-groups" class="tile tile--parchment">
+    <div class="container-wide">
 
-      <div class="scroll-fade" style="margin-bottom:2.5rem;">
-        <div class="section-label">Participation Tracks</div>
-        <h2 style="font-size:1.75rem;font-weight:700;letter-spacing:-0.025em;color:#EDEDED;margin-bottom:8px;">Age Groups</h2>
-        <p style="color:#71717A;font-size:15px;max-width:36rem;line-height:1.65;">
-          Two age-based tracks to ensure a fair, appropriately challenging experience for every participant.
-        </p>
+      <div class="tile-header">
+        <div class="t-tagline">Participation Tracks</div>
+        <h2 class="t-display-lg">Age Groups</h2>
+        <p class="t-body">Two age-based tracks to ensure a fair, appropriately challenging experience for every participant.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-5 scroll-fade" style="transition-delay:0.15s;">
+      <div class="card-grid">
 
-        <!-- Group A -->
-        <div class="card" style="border-radius:10px;padding:24px;border-left:3px solid #3B82F6;">
-          <span style="display:inline-block;padding:3px 10px;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);border-radius:4px;font-size:11px;font-weight:600;color:#60A5FA;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;">Group A</span>
-          <h3 style="font-size:16px;font-weight:600;color:#EDEDED;margin-bottom:4px;">Gymnasium &amp; Grades 9–10</h3>
-          <p style="font-size:13px;color:#52525B;margin-bottom:16px;">Approx. ages 11–16</p>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;align-items:flex-start;gap:10px;">
-              <div style="width:5px;height:5px;background:#3B82F6;border-radius:50%;margin-top:8px;flex-shrink:0;"></div>
-              <span style="font-size:14px;color:#A1A1AA;">Gymnasium students (grades 5–8)</span>
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;">
-              <div style="width:5px;height:5px;background:#3B82F6;border-radius:50%;margin-top:8px;flex-shrink:0;"></div>
-              <span style="font-size:14px;color:#A1A1AA;">High school 9th &amp; 10th grade</span>
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;">
-              <div style="width:5px;height:5px;background:#3B82F6;border-radius:50%;margin-top:8px;flex-shrink:0;"></div>
-              <span style="font-size:14px;color:#A1A1AA;">Introductory signal processing &amp; AI challenges</span>
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;">
-              <div style="width:5px;height:5px;background:#3B82F6;border-radius:50%;margin-top:8px;flex-shrink:0;"></div>
-              <span style="font-size:14px;color:#A1A1AA;">Separate hackathon category &amp; judging criteria</span>
-            </div>
-          </div>
+        <div class="utility-card">
+          <span class="chip chip--on-light utility-card-label">Group A</span>
+          <h3>Gymnasium &amp; Grades 9–10</h3>
+          <span class="t-caption">Approx. ages 11–16</span>
+          <ul class="utility-list">
+            <li>Gymnasium students (grades 5–8)</li>
+            <li>High school 9th &amp; 10th grade</li>
+            <li>Introductory signal processing &amp; AI challenges</li>
+            <li>Separate hackathon category &amp; judging criteria</li>
+          </ul>
         </div>
 
-        <!-- Group B -->
-        <div class="card" style="border-radius:10px;padding:24px;border-left:3px solid #262626;">
-          <span style="display:inline-block;padding:3px 10px;background:rgba(255,255,255,0.04);border:1px solid #333333;border-radius:4px;font-size:11px;font-weight:600;color:#71717A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;">Group B</span>
-          <h3 style="font-size:16px;font-weight:600;color:#EDEDED;margin-bottom:4px;">Grades 11–12</h3>
-          <p style="font-size:13px;color:#52525B;margin-bottom:16px;">Approx. ages 17–18</p>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;align-items:flex-start;gap:10px;">
-              <div style="width:5px;height:5px;background:#52525B;border-radius:50%;margin-top:8px;flex-shrink:0;"></div>
-              <span style="font-size:14px;color:#A1A1AA;">High school 11th &amp; 12th grade</span>
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;">
-              <div style="width:5px;height:5px;background:#52525B;border-radius:50%;margin-top:8px;flex-shrink:0;"></div>
-              <span style="font-size:14px;color:#A1A1AA;">Advanced signal processing &amp; AI challenges</span>
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;">
-              <div style="width:5px;height:5px;background:#52525B;border-radius:50%;margin-top:8px;flex-shrink:0;"></div>
-              <span style="font-size:14px;color:#A1A1AA;">Separate hackathon category &amp; judging criteria</span>
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:10px;">
-              <div style="width:5px;height:5px;background:#52525B;border-radius:50%;margin-top:8px;flex-shrink:0;"></div>
-              <span style="font-size:14px;color:#A1A1AA;">Higher complexity problem sets</span>
-            </div>
-          </div>
+        <div class="utility-card">
+          <span class="chip chip--on-light utility-card-label">Group B</span>
+          <h3>Grades 11–12</h3>
+          <span class="t-caption">Approx. ages 17–18</span>
+          <ul class="utility-list">
+            <li>High school 11th &amp; 12th grade</li>
+            <li>Advanced signal processing &amp; AI challenges</li>
+            <li>Separate hackathon category &amp; judging criteria</li>
+            <li>Higher complexity problem sets</li>
+          </ul>
         </div>
 
       </div>
@@ -203,110 +159,76 @@
   </section>
 
   <!-- ─── About ────────────────────────────────────────────────── -->
-  <section id="about" style="padding:6rem 1.5rem;">
-    <div class="section-divider"></div>
-    <div style="max-width:72rem;margin:3rem auto 0;" class="grid md:grid-cols-[3fr_2fr] gap-16 items-start">
+  <section id="about" class="tile tile--light">
+    <div class="container-wide about-grid">
 
-      <div class="scroll-fade">
-        <div class="section-label">About the Event</div>
-        <h2 style="font-size:1.75rem;font-weight:700;letter-spacing:-0.025em;color:#EDEDED;margin-bottom:20px;">
-          Where signals meet intelligence
-        </h2>
-        <p style="color:#71717A;line-height:1.75;margin-bottom:16px;font-size:15px;">
-          From Algorithm to Neurons is an intensive 4-day event held in
-          <strong style="color:#EDEDED;font-weight:600;">Constanta, Romania</strong>,
+      <div class="about-copy">
+        <div class="t-tagline">About the Event</div>
+        <h2 class="t-display-lg">Where signals meet intelligence</h2>
+        <p>
+          From Algorithm to Neurons is an intensive 5-day event held in
+          <strong>Constanta, Romania</strong>,
           bringing together middle and high school students passionate about signal processing and artificial intelligence.
         </p>
-        <p style="color:#71717A;line-height:1.75;font-size:15px;">
-          Through hands-on hardware workshops, a timed competitive AI challenge, and a 24-hour hackathon,
+        <p>
+          Through hands-on hardware workshops, a timed competitive AI challenge, and a hackathon,
           young participants will explore the bridge between raw digital signals and intelligent systems —
           no prior experience required.
         </p>
       </div>
 
-      <!-- Stats table -->
-      <div class="card scroll-fade" style="border-radius:10px;overflow:hidden;margin-top:1rem;transition-delay:0.15s;">
-        <table style="width:100%;border-collapse:collapse;font-size:14px;">
-          <tbody>
-            <tr style="border-bottom:1px solid #262626;">
-              <td style="padding:13px 18px;color:#52525B;">Format</td>
-              <td style="padding:13px 18px;color:#A1A1AA;font-weight:500;text-align:right;">Workshops + Hackathon</td>
-            </tr>
-            <tr style="border-bottom:1px solid #262626;">
-              <td style="padding:13px 18px;color:#52525B;">Duration</td>
-              <td style="padding:13px 18px;color:#A1A1AA;font-weight:500;text-align:right;">4 Days</td>
-            </tr>
-            <tr style="border-bottom:1px solid #262626;">
-              <td style="padding:13px 18px;color:#52525B;">Hackathon</td>
-              <td style="padding:13px 18px;color:#A1A1AA;font-weight:500;text-align:right;">24 Hours</td>
-            </tr>
-            <tr style="border-bottom:1px solid #262626;">
-              <td style="padding:13px 18px;color:#52525B;">AI Competition</td>
-              <td style="padding:13px 18px;color:#A1A1AA;font-weight:500;text-align:right;">3 Hours</td>
-            </tr>
-            <tr style="border-bottom:1px solid #262626;">
-              <td style="padding:13px 18px;color:#52525B;">Workshops</td>
-              <td style="padding:13px 18px;color:#A1A1AA;font-weight:500;text-align:right;">2 Technical Sessions</td>
-            </tr>
-            <tr>
-              <td style="padding:13px 18px;color:#52525B;">Location</td>
-              <td style="padding:13px 18px;color:#A1A1AA;font-weight:500;text-align:right;">Constanta, Romania</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="stat-card">
+        <div class="stat-row"><span class="stat-row-label">Format</span><span class="stat-row-value">Workshops + Hackathon</span></div>
+        <div class="stat-row"><span class="stat-row-label">Duration</span><span class="stat-row-value">5 Days</span></div>
+        <div class="stat-row"><span class="stat-row-label">Hackathon</span><span class="stat-row-value">24 Hours</span></div>
+        <div class="stat-row"><span class="stat-row-label">AI Competition</span><span class="stat-row-value">3 Hours</span></div>
+        <div class="stat-row"><span class="stat-row-label">Workshops</span><span class="stat-row-value">2 Technical Sessions</span></div>
+        <div class="stat-row"><span class="stat-row-label">Location</span><span class="stat-row-value">Constanta, Romania</span></div>
       </div>
 
     </div>
   </section>
 
   <!-- ─── Schedule ─────────────────────────────────────────────── -->
-  <section id="schedule" style="padding:6rem 1.5rem;background:#111111;">
-    <div class="section-divider"></div>
-    <div style="max-width:72rem;margin:3rem auto 0;">
+  <section id="schedule" class="tile tile--dark-2">
+    <div class="container-wide">
 
-      <div class="scroll-fade" style="margin-bottom:2.5rem;">
-        <div class="section-label">Program</div>
-        <h2 style="font-size:1.75rem;font-weight:700;letter-spacing:-0.025em;color:#EDEDED;">4-Day Schedule</h2>
+      <div class="tile-header">
+        <div class="t-tagline">Program</div>
+        <h2 class="t-display-lg">5-Day Schedule</h2>
       </div>
 
-      <!-- Day tabs -->
-      <div class="scroll-fade" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;transition-delay:0.12s;">
+      <div class="tabs">
         @for (day of days; track day.label; let i = $index) {
           <button
             (click)="setActiveDay(i)"
-            [class]="activeDay() === i ? 'tab-active' : 'tab-inactive'"
-            style="padding:8px 16px;border-radius:7px;font-size:13px;font-weight:500;cursor:pointer;"
+            [class.is-active]="activeDay() === i"
+            class="tab"
           >
             {{ day.label }}
           </button>
         }
       </div>
 
-      <!-- Active day events -->
       @for (day of days; track day.label; let i = $index) {
         @if (activeDay() === i) {
-          <div style="max-width:42rem;">
-            <p style="font-size:12px;font-weight:500;color:#71717A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;">{{ day.date }}</p>
-            <div class="card" style="border-radius:10px;overflow:hidden;">
+          <div>
+            <p class="schedule-date">{{ day.date }}</p>
+            <div class="schedule-card">
               @for (event of day.events; track event.title) {
-                <div class="schedule-row" style="display:flex;gap:16px;padding:18px 20px;">
-                  <div style="padding-top:5px;flex-shrink:0;">
-                    <div [class]="event.dotColor" style="width:7px;height:7px;border-radius:50%;"></div>
-                  </div>
-                  <div style="flex:1;min-width:0;">
-                    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:4px;">
-                      <h3 style="font-weight:600;color:#EDEDED;font-size:14px;">{{ event.title }}</h3>
+                <div class="schedule-row">
+                  <div class="schedule-row-main">
+                    <div class="schedule-row-head">
+                      <h3>{{ event.title }}</h3>
                       @if (event.time) {
-                        <span style="font-size:12px;color:#71717A;white-space:nowrap;padding-top:2px;flex-shrink:0;font-weight:500;">{{ event.time }}</span>
+                        <span class="schedule-time">{{ event.time }}</span>
                       }
                     </div>
                     @if (event.description) {
-                      <p style="font-size:13px;color:#71717A;line-height:1.6;">{{ event.description }}</p>
+                      <p class="schedule-desc">{{ event.description }}</p>
                     }
                     @if (event.badge) {
-                      <span [class]="'inline-block mt-3 px-2 py-0.5 rounded text-xs font-medium border ' + event.badgeClass">
-                        {{ event.badge }}
-                      </span>
+                      <span class="chip chip--on-dark schedule-badge">{{ event.badge }}</span>
                     }
                   </div>
                 </div>
@@ -320,78 +242,58 @@
   </section>
 
   <!-- ─── Volunteer ─────────────────────────────────────────────── -->
-  <section id="volunteer" style="padding:6rem 1.5rem;">
-    <div class="section-divider"></div>
-    <div style="max-width:42rem;margin:3rem auto 0;">
+  <section id="volunteer" class="tile tile--light">
+    <div class="container">
 
-      <div class="scroll-fade" style="margin-bottom:2.5rem;">
-        <div class="section-label">Get Involved</div>
-        <h2 style="font-size:1.75rem;font-weight:700;letter-spacing:-0.025em;color:#EDEDED;margin-bottom:8px;">Call for Volunteers</h2>
-        <p style="color:#71717A;line-height:1.7;font-size:15px;">
-          Help us make this event unforgettable. We're looking for motivated people to join our organizing team.
-        </p>
+      <div class="tile-header">
+        <div class="t-tagline">Get Involved</div>
+        <h2 class="t-display-lg">Call for Volunteers</h2>
+        <p class="t-body">Help us make this event unforgettable. We're looking for motivated people to join our organizing team.</p>
       </div>
 
       @if (volunteerSubmitted()) {
-        <div class="card" style="border-radius:10px;padding:40px;text-align:center;">
-          <div style="width:48px;height:48px;border-radius:50%;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
-            <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="#4ADE80" stroke-width="2.5">
+        <div class="form-card form-success">
+          <div class="form-success-icon">
+            <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 style="font-weight:600;font-size:16px;color:#EDEDED;margin-bottom:6px;">
-            Thanks {{ volunteerSubmittedName() }}, your application was submitted!
-          </h3>
-          <p style="color:#71717A;font-size:14px;">We'll review it and get back to you soon.</p>
+          <h3>Thanks {{ volunteerSubmittedName() }}, your application was submitted!</h3>
+          <p>We'll review it and get back to you soon.</p>
         </div>
       } @else {
-        <form
-          #volunteerFormRef="ngForm"
-          (ngSubmit)="submitVolunteer(volunteerFormRef)"
-          novalidate
-          class="card"
-          style="border-radius:10px;overflow:hidden;"
-        >
-          <div style="padding:20px;" class="grid sm:grid-cols-2 gap-4">
-            <div style="display:flex;flex-direction:column;gap:6px;">
-              <label style="font-size:13px;font-weight:500;color:#A1A1AA;">Full Name <span style="color:#F87171;">*</span></label>
-              <input name="name" [(ngModel)]="volunteerData.name" required type="text" autocomplete="name" placeholder="Your full name" class="form-input" />
+        <form #volunteerFormRef="ngForm" (ngSubmit)="submitVolunteer(volunteerFormRef)" novalidate class="form-card">
+          <div class="form-section form-row">
+            <div class="field">
+              <label>Full Name <span class="required">*</span></label>
+              <input name="name" [(ngModel)]="volunteerData.name" required type="text" autocomplete="name" placeholder="Your full name" class="input" />
             </div>
-            <div style="display:flex;flex-direction:column;gap:6px;">
-              <label style="font-size:13px;font-weight:500;color:#A1A1AA;">Email <span style="color:#F87171;">*</span></label>
-              <input name="email" [(ngModel)]="volunteerData.email" required type="email" autocomplete="email" placeholder="you@example.com" class="form-input" />
+            <div class="field">
+              <label>Email <span class="required">*</span></label>
+              <input name="email" [(ngModel)]="volunteerData.email" required type="email" autocomplete="email" placeholder="you@example.com" class="input" />
             </div>
           </div>
 
-          <div style="padding:20px;border-top:1px solid #262626;">
-            <div style="display:flex;flex-direction:column;gap:6px;">
-              <label style="font-size:13px;font-weight:500;color:#A1A1AA;">Skills &amp; Expertise</label>
-              <input name="skills" [(ngModel)]="volunteerData.skills" type="text" placeholder="e.g. Event coordination, Arduino, Technical support…" class="form-input" />
+          <div class="form-section">
+            <div class="field">
+              <label>Skills &amp; Expertise</label>
+              <input name="skills" [(ngModel)]="volunteerData.skills" type="text" placeholder="e.g. Event coordination, Arduino, Technical support…" class="input" />
             </div>
           </div>
 
-          <div style="padding:20px;border-top:1px solid #262626;">
-            <div style="display:flex;flex-direction:column;gap:6px;">
-              <label style="font-size:13px;font-weight:500;color:#A1A1AA;">Why do you want to volunteer?</label>
-              <textarea name="message" [(ngModel)]="volunteerData.message" rows="4" placeholder="Tell us about your motivation and what you can contribute…" class="form-input" style="resize:vertical;"></textarea>
+          <div class="form-section">
+            <div class="field">
+              <label>Why do you want to volunteer?</label>
+              <textarea name="message" [(ngModel)]="volunteerData.message" rows="4" placeholder="Tell us about your motivation and what you can contribute…" class="input" style="resize:vertical;"></textarea>
             </div>
           </div>
 
           @if (volunteerError()) {
-            <div style="padding:0 20px;margin-bottom:16px;">
-              <p style="color:#F87171;font-size:13px;background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.2);border-radius:6px;padding:10px 14px;">
-                Something went wrong. Please check your connection and try again.
-              </p>
-            </div>
+            <p class="form-error">Something went wrong. Please check your connection and try again.</p>
           }
 
-          <div style="padding:20px;border-top:1px solid #262626;">
-            <button
-              type="submit"
-              [disabled]="volunteerLoading()"
-              class="btn-primary"
-              style="width:100%;padding:10px;font-size:14px;font-weight:600;border-radius:7px;border:none;cursor:pointer;font-family:inherit;display:block;"
-            >
+          <div class="form-section">
+            <button type="submit" [disabled]="volunteerLoading()" class="btn btn--primary btn--block">
               @if (volunteerLoading()) {
                 <span style="display:inline-flex;align-items:center;justify-content:center;gap:8px;">
                   <svg style="width:16px;height:16px;animation:spin 1s linear infinite;" fill="none" viewBox="0 0 24 24">
@@ -412,127 +314,98 @@
   </section>
 
   <!-- ─── Registration ─────────────────────────────────────────── -->
-  <section id="register" style="padding:6rem 1.5rem;background:#111111;">
-    <div class="section-divider"></div>
-    <div style="max-width:42rem;margin:3rem auto 0;">
+  <section id="register" class="tile tile--dark">
+    <div class="container">
 
-      <div class="scroll-fade" style="margin-bottom:2.5rem;">
-        <div class="section-label">Join the Event</div>
-        <h2 style="font-size:1.75rem;font-weight:700;letter-spacing:-0.025em;color:#EDEDED;margin-bottom:8px;">Register Now</h2>
-        <p style="color:#71717A;line-height:1.7;font-size:15px;">
-          Secure your spot — <span style="color:#60A5FA;font-weight:600;">August 21–24, 2026</span> in Constanta, Romania.
+      <div class="tile-header">
+        <div class="t-tagline">Join the Event</div>
+        <h2 class="t-display-lg">Register Now</h2>
+        <p class="t-body">
+          Secure your spot — August 20–24, 2026 in Constanta, Romania.
           Open to middle and high school students in both age group tracks.
         </p>
       </div>
 
-      <!-- Age group reminder -->
-      <div class="card scroll-fade" style="border-radius:10px;overflow:hidden;margin-bottom:20px;transition-delay:0.12s;">
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid #262626;font-size:13px;">
-          <span style="color:#52525B;font-weight:500;">Group A</span>
-          <span style="color:#A1A1AA;font-weight:500;">Gymnasium + Grades 9–10</span>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px;font-size:13px;">
-          <span style="color:#52525B;font-weight:500;">Group B</span>
-          <span style="color:#A1A1AA;font-weight:500;">Grades 11–12</span>
-        </div>
+      <div class="reminder-card">
+        <div class="reminder-row"><span class="reminder-row-label">Group A</span><span class="reminder-row-value">Gymnasium + Grades 9–10</span></div>
+        <div class="reminder-row"><span class="reminder-row-label">Group B</span><span class="reminder-row-value">Grades 11–12</span></div>
       </div>
 
       @if (registrationSubmitted()) {
-        <div class="card" style="border-radius:10px;padding:40px;text-align:center;">
-          <div style="width:48px;height:48px;border-radius:50%;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
-            <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="#4ADE80" stroke-width="2.5">
+        <div class="form-card form-success">
+          <div class="form-success-icon">
+            <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 style="font-weight:600;font-size:16px;color:#EDEDED;margin-bottom:6px;">
-            Thanks {{ registrationSubmittedName() }}, your application was submitted!
-          </h3>
-          <p style="color:#71717A;font-size:14px;">We'll be in touch with next steps. See you in Constanta!</p>
+          <h3>Thanks {{ registrationSubmittedName() }}, your application was submitted!</h3>
+          <p>We'll be in touch with next steps. See you in Constanta!</p>
         </div>
       } @else {
-        <form
-          #registrationFormRef="ngForm"
-          (ngSubmit)="submitRegistration(registrationFormRef)"
-          novalidate
-          class="card"
-          style="border-radius:10px;overflow:hidden;"
-        >
-          <div style="padding:20px;" class="grid sm:grid-cols-2 gap-4">
-            <div style="display:flex;flex-direction:column;gap:6px;">
-              <label style="font-size:13px;font-weight:500;color:#A1A1AA;">Full Name <span style="color:#F87171;">*</span></label>
-              <input name="name" [(ngModel)]="registrationData.name" required type="text" autocomplete="name" placeholder="Your full name" class="form-input" />
+        <form #registrationFormRef="ngForm" (ngSubmit)="submitRegistration(registrationFormRef)" novalidate class="form-card">
+          <div class="form-section form-row">
+            <div class="field">
+              <label>Full Name <span class="required">*</span></label>
+              <input name="name" [(ngModel)]="registrationData.name" required type="text" autocomplete="name" placeholder="Your full name" class="input" />
             </div>
-            <div style="display:flex;flex-direction:column;gap:6px;">
-              <label style="font-size:13px;font-weight:500;color:#A1A1AA;">Email <span style="color:#F87171;">*</span></label>
-              <input name="email" [(ngModel)]="registrationData.email" required type="email" autocomplete="email" placeholder="you@example.com" class="form-input" />
+            <div class="field">
+              <label>Email <span class="required">*</span></label>
+              <input name="email" [(ngModel)]="registrationData.email" required type="email" autocomplete="email" placeholder="you@example.com" class="input" />
             </div>
           </div>
 
-          <div style="padding:20px;border-top:1px solid #262626;">
-            <div style="display:flex;flex-direction:column;gap:6px;">
-              <label style="font-size:13px;font-weight:500;color:#A1A1AA;">
-                Phone <span style="font-weight:400;color:#52525B;">(optional)</span>
-              </label>
-              <input name="phone" [(ngModel)]="registrationData.phone" type="tel" autocomplete="tel" placeholder="+40 700 000 000" class="form-input" />
+          <div class="form-section">
+            <div class="field">
+              <label>Phone <span class="hint">(optional)</span></label>
+              <input name="phone" [(ngModel)]="registrationData.phone" type="tel" autocomplete="tel" placeholder="+40 700 000 000" class="input" />
             </div>
           </div>
 
-          <div style="padding:20px;border-top:1px solid #262626;">
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div style="display:flex;flex-direction:column;gap:6px;">
-                <label style="font-size:13px;font-weight:500;color:#A1A1AA;">School <span style="color:#F87171;">*</span></label>
-                <input name="school" [(ngModel)]="registrationData.school" required type="text" placeholder="e.g. Liceul Teoretic Ovidius" class="form-input" />
-              </div>
-              <div style="display:flex;flex-direction:column;gap:6px;">
-                <label style="font-size:13px;font-weight:500;color:#A1A1AA;">Grade / Year <span style="color:#F87171;">*</span></label>
-                <select name="grade" [(ngModel)]="registrationData.grade" required class="form-select">
-                  <option value="" disabled>Select grade…</option>
-                  <optgroup label="Group A — Gymnasium">
-                    <option value="5th Grade">5th Grade</option>
-                    <option value="6th Grade">6th Grade</option>
-                    <option value="7th Grade">7th Grade</option>
-                    <option value="8th Grade">8th Grade</option>
-                  </optgroup>
-                  <optgroup label="Group A — High School (9th–10th)">
-                    <option value="9th Grade">9th Grade</option>
-                    <option value="10th Grade">10th Grade</option>
-                  </optgroup>
-                  <optgroup label="Group B — High School (11th–12th)">
-                    <option value="11th Grade">11th Grade</option>
-                    <option value="12th Grade">12th Grade</option>
-                  </optgroup>
-                </select>
-              </div>
+          <div class="form-section form-row">
+            <div class="field">
+              <label>School <span class="required">*</span></label>
+              <input name="school" [(ngModel)]="registrationData.school" required type="text" placeholder="e.g. Liceul Teoretic Ovidius" class="input" />
+            </div>
+            <div class="field">
+              <label>Grade / Year <span class="required">*</span></label>
+              <select name="grade" [(ngModel)]="registrationData.grade" required class="input">
+                <option value="" disabled>Select grade…</option>
+                <optgroup label="Group A — Gymnasium">
+                  <option value="5th Grade">5th Grade</option>
+                  <option value="6th Grade">6th Grade</option>
+                  <option value="7th Grade">7th Grade</option>
+                  <option value="8th Grade">8th Grade</option>
+                </optgroup>
+                <optgroup label="Group A — High School (9th–10th)">
+                  <option value="9th Grade">9th Grade</option>
+                  <option value="10th Grade">10th Grade</option>
+                </optgroup>
+                <optgroup label="Group B — High School (11th–12th)">
+                  <option value="11th Grade">11th Grade</option>
+                  <option value="12th Grade">12th Grade</option>
+                </optgroup>
+              </select>
             </div>
           </div>
 
-          <div style="padding:20px;border-top:1px solid #262626;">
-            <div style="display:flex;flex-direction:column;gap:6px;">
-              <label style="font-size:13px;font-weight:500;color:#A1A1AA;">Participation Track <span style="color:#F87171;">*</span></label>
-              <select name="participation" [(ngModel)]="registrationData.participation" required class="form-select">
-                <option value="full">Full Event — All 4 Days</option>
-                <option value="workshops">Workshops Only (Fri + Sat morning)</option>
+          <div class="form-section">
+            <div class="field">
+              <label>Participation Track <span class="required">*</span></label>
+              <select name="participation" [(ngModel)]="registrationData.participation" required class="input">
+                <option value="full">Full Event — All 5 Days</option>
+                <option value="workshops">Workshops Only (Fri–Sat)</option>
                 <option value="hackathon">Hackathon Only (Sat–Sun)</option>
-                <option value="competition">AI Competition Only (Fri)</option>
+                <option value="competition">AI Competition Only (Sat)</option>
               </select>
             </div>
           </div>
 
           @if (registrationError()) {
-            <div style="padding:0 20px;margin-bottom:16px;">
-              <p style="color:#F87171;font-size:13px;background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.2);border-radius:6px;padding:10px 14px;">
-                Something went wrong. Please check your connection and try again.
-              </p>
-            </div>
+            <p class="form-error">Something went wrong. Please check your connection and try again.</p>
           }
 
-          <div style="padding:20px;border-top:1px solid #262626;">
-            <button
-              type="submit"
-              [disabled]="registrationLoading()"
-              class="btn-primary"
-              style="width:100%;padding:10px;font-size:14px;font-weight:600;border-radius:7px;border:none;cursor:pointer;font-family:inherit;display:block;"
-            >
+          <div class="form-section">
+            <button type="submit" [disabled]="registrationLoading()" class="btn btn--primary btn--block">
               @if (registrationLoading()) {
                 <span style="display:inline-flex;align-items:center;justify-content:center;gap:8px;">
                   <svg style="width:16px;height:16px;animation:spin 1s linear infinite;" fill="none" viewBox="0 0 24 24">
@@ -553,36 +426,33 @@
   </section>
 
   <!-- ─── Footer ───────────────────────────────────────────────── -->
-  <footer style="padding:40px 1.5rem;border-top:1px solid #1E1E1E;">
-    <div style="max-width:72rem;margin:0 auto;">
-      <div class="grid md:grid-cols-3 gap-8 items-center">
+  <footer class="site-footer">
+    <div class="container-wide">
+      <div class="footer-grid">
 
         <div>
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-            <svg width="16" height="11" viewBox="0 0 20 14" fill="none" aria-hidden="true">
-              <path d="M1 7h2.5L5 2l3 10 3-10 2 7 1.5-4L17 7h2" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span style="font-weight:600;font-size:14px;color:#EDEDED;">From Algorithm to Neurons</span>
-          </div>
-          <div style="font-size:13px;color:#52525B;">August 21–24, 2026 · Constanta, Romania</div>
+          <div class="footer-brand-name">From Algorithm to Neurons</div>
+          <div class="footer-brand-meta">August 20–24, 2026 · Constanta, Romania</div>
         </div>
 
-        <div style="display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <img src="ieee_logo.png" alt="IEEE Region 8 STEM & K-12" style="height:36px;width:auto;object-fit:contain;" />
-          <div style="width:1px;height:28px;background:#262626;flex-shrink:0;"></div>
-          <img src="logo_ipv.png" alt="Informatică pentru Viitor" style="height:36px;width:auto;object-fit:contain;" />
+        <div class="footer-partners">
+          <img src="ieee_logo.png" alt="IEEE Region 8 STEM & K-12" />
+          <div class="footer-partners-divider"></div>
+          <img src="logo_ipv.png" alt="Informatică pentru Viitor" />
+          <div class="footer-partners-divider"></div>
+          <img src="logo_umc.jpeg" alt="Maritime University of Constanta" class="footer-partners-logo-boxed" />
         </div>
 
-        <div style="display:flex;gap:20px;align-items:center;justify-content:flex-end;">
-          <a href="#age-groups" style="font-size:13px;text-decoration:none;color:#71717A;">Age Groups</a>
-          <a href="#volunteer" style="font-size:13px;text-decoration:none;color:#71717A;">Volunteer</a>
-          <a href="#register" style="font-size:13px;text-decoration:none;color:#71717A;">Register</a>
+        <div class="footer-links">
+          <a href="#age-groups">Age Groups</a>
+          <a href="#volunteer">Volunteer</a>
+          <a href="#register">Register</a>
         </div>
 
       </div>
 
-      <div style="margin-top:24px;padding-top:24px;border-top:1px solid #1A1A1A;">
-        <p style="color:#3F3F46;font-size:12px;">© 2026 From Algorithm to Neurons. All rights reserved.</p>
+      <div class="footer-bottom">
+        <p class="t-fine-print">© 2026 From Algorithm to Neurons. All rights reserved.</p>
       </div>
     </div>
   </footer>

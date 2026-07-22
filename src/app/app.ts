@@ -19,9 +19,7 @@ interface ScheduleEvent {
   title: string;
   time?: string;
   description?: string;
-  dotColor: string;
   badge?: string;
-  badgeClass?: string;
 }
 
 interface ScheduleDay {
@@ -57,106 +55,113 @@ export class App implements OnDestroy {
 
   readonly days: ScheduleDay[] = [
     {
-      label: 'Thu · Aug 21',
-      date: 'Thursday, August 21 — Arrival Day',
+      label: 'Thu · Aug 20',
+      date: 'Thursday, August 20 — Arrival Day',
       events: [
         {
           title: 'Participant Arrival & Check-in',
-          time: 'All day',
+          time: '14:00 – 17:00',
           description: 'Arrive, settle in, and pick up your badge and welcome kit.',
-          dotColor: 'bg-slate-300',
           badge: 'Arrival',
-          badgeClass: 'bg-zinc-800 text-zinc-300 border-zinc-700',
+        },
+        {
+          title: 'Scientific Poster Stands',
+          time: '14:00 – 17:00',
+          description: 'Browse student research posters on display throughout the afternoon.',
+          badge: 'Exhibition',
         },
         {
           title: 'Welcome Reception',
-          time: '19:00',
-          description: 'Meet fellow participants, mentors, and organizers over dinner.',
-          dotColor: 'bg-slate-300',
+          time: '17:00',
+          description: 'Meet fellow participants, mentors, and organizers.',
         },
       ],
     },
     {
-      label: 'Fri · Aug 22',
-      date: 'Friday, August 22 — Signals Day',
+      label: 'Fri · Aug 21',
+      date: 'Friday, August 21 — Panels & Workshops Day',
       events: [
         {
-          title: 'Workshop: Digital Signals',
-          time: '09:00',
-          description:
-            'Hands-on workshop covering digital signal processing — sampling, filtering, FFT, and real-world applications.',
-          dotColor: 'bg-blue-500',
-          badge: 'Workshop',
-          badgeClass: 'bg-blue-950 text-blue-400 border-blue-900',
+          title: 'Scientific Corner: Presentation & Evaluation',
+          time: '10:00',
+          badge: 'Scientific Corner',
         },
+        {
+          title: 'Panels',
+          time: '11:00 – 13:00',
+        },
+        {
+          title: 'Workshop: Signal Reading Machine — Hands-On',
+          time: '14:00 – 16:00',
+          badge: 'Workshop',
+        },
+        {
+          title: 'Workshops',
+          time: '16:00 – 17:00',
+        },
+        {
+          title: 'Social Night',
+          time: '18:00 – 20:00',
+        },
+      ],
+    },
+    {
+      label: 'Sat · Aug 22',
+      date: 'Saturday, August 22 — Competition Day',
+      events: [
         {
           title: 'Competitive AI Competition',
-          time: '14:00',
-          description:
-            'A 3-hour individual or team challenge. Solve signal-based AI problems under time pressure. Prizes for top finishers.',
-          dotColor: 'bg-slate-400',
+          time: '10:00 – 13:00',
           badge: '3 Hours',
-          badgeClass: 'bg-zinc-800 text-zinc-300 border-zinc-700',
         },
         {
-          title: 'Meal Break & Networking',
-          time: '17:00',
-          description: 'Recharge and connect with participants over dinner.',
-          dotColor: 'bg-slate-300',
-        },
-      ],
-    },
-    {
-      label: 'Sat · Aug 23',
-      date: 'Saturday, August 23 — Build Day',
-      events: [
-        {
-          title: 'Workshop: Signal Reading Machine',
-          time: '09:00',
-          description:
-            'Build a physical signal acquisition device using Arduino or ESP32 — from hardware wiring to real-time data streaming.',
-          dotColor: 'bg-blue-500',
+          title: 'Workshop: Digital Signals',
+          time: '14:00 – 16:00',
           badge: 'Workshop',
-          badgeClass: 'bg-blue-950 text-blue-400 border-blue-900',
         },
         {
-          title: 'Hackathon Kickoff',
-          time: '13:00',
-          description:
-            'Theme: "Signals: Improve Our Future." The 24-hour clock starts now. Teams build projects that leverage signal data to solve real-world problems.',
-          dotColor: 'bg-zinc-300',
-          badge: '24H Hackathon Starts',
-          badgeClass: 'bg-slate-900 text-slate-100 border-slate-800',
+          title: 'Workshop: AI',
+          time: '16:00 – 17:00',
+          badge: 'Workshop',
+        },
+        {
+          title: 'Hackathon Start Announcement',
+          time: '17:00',
+          badge: 'Hackathon Starts',
         },
       ],
     },
     {
-      label: 'Sun · Aug 24',
-      date: 'Sunday, August 24 — Finals Day',
+      label: 'Sun · Aug 23',
+      date: 'Sunday, August 23 — Hackathon Day',
       events: [
         {
-          title: 'Hackathon Submission Deadline',
-          time: '13:00',
-          description: 'Code freeze. All project submissions must be finalized. Prepare your demo.',
-          dotColor: 'bg-amber-500',
-          badge: 'Deadline',
-          badgeClass: 'bg-amber-950 text-amber-400 border-amber-900',
+          title: 'Competition Scientific Papers',
+          time: '10:00',
         },
         {
-          title: 'Project Judging',
-          time: '14:00',
-          description:
-            'Teams present to a panel of judges. Each team gets a dedicated demo slot with Q&A.',
-          dotColor: 'bg-slate-400',
+          title: 'Hackathon: Project Presentation',
+          time: '17:00',
+          badge: 'Hackathon',
+        },
+      ],
+    },
+    {
+      label: 'Mon · Aug 24',
+      date: 'Monday, August 24 — Finals Day',
+      events: [
+        {
+          title: 'Insights',
+          time: '10:00 – 11:00',
         },
         {
           title: 'Award Ceremony',
-          time: '17:00',
-          description:
-            'Celebrate the winners of the hackathon and AI competition. Prizes, certificates, and closing remarks.',
-          dotColor: 'bg-blue-500',
+          time: '11:00',
           badge: 'Prizes',
-          badgeClass: 'bg-blue-950 text-blue-400 border-blue-900',
+        },
+        {
+          title: 'Leaving',
+          time: '12:00',
         },
       ],
     },
@@ -183,7 +188,7 @@ export class App implements OnDestroy {
   }
 
   private updateCountdown() {
-    const diff = new Date('2026-08-21T00:00:00').getTime() - Date.now();
+    const diff = new Date('2026-08-20T00:00:00').getTime() - Date.now();
     if (diff <= 0) {
       this.countdown.set({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       return;
@@ -229,7 +234,7 @@ export class App implements OnDestroy {
     this.registrationLoading.set(true);
     this.registrationError.set(false);
     const tracks: Record<string, string> = {
-      full: 'Full Event (All 4 days)',
+      full: 'Full Event (All 5 days)',
       workshops: 'Workshops Only',
       hackathon: 'Hackathon Only',
       competition: 'AI Competition Only',
