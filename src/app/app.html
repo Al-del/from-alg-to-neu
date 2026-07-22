@@ -413,6 +413,34 @@
 
           <div class="form-section">
             <div class="field">
+              <label>Will you attend in person or online? <span class="required">*</span></label>
+              <div class="track-options">
+                <label class="track-option" [class.is-selected]="registrationData.attendanceMode === 'in-person'">
+                  <input type="radio" name="attendanceMode" value="in-person" [(ngModel)]="registrationData.attendanceMode" />
+                  <span>In-Person</span>
+                </label>
+                <label class="track-option" [class.is-selected]="registrationData.attendanceMode === 'online'">
+                  <input type="radio" name="attendanceMode" value="online" [(ngModel)]="registrationData.attendanceMode" />
+                  <span>Online</span>
+                </label>
+              </div>
+              @if (registrationAttendanceError()) {
+                <span class="field-error-text">Select whether you'll attend in person or online.</span>
+              }
+            </div>
+          </div>
+
+          @if (registrationData.tracks.aiCompetition && registrationData.attendanceMode === 'in-person') {
+            <div class="form-section">
+              <div class="field">
+                <label>MLCompetete Username <span class="required">*</span></label>
+                <input name="mlUsername" [(ngModel)]="registrationData.mlUsername" required type="text" placeholder="Your MLCompetete username" class="input" />
+              </div>
+            </div>
+          }
+
+          <div class="form-section">
+            <div class="field">
               <label>CV Link <span class="hint">(optional — Google Drive, shared so anyone with the link can view)</span></label>
               <input name="cvLink" [(ngModel)]="registrationData.cvLink" type="url" placeholder="https://drive.google.com/…" class="input" />
             </div>

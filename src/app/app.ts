@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 // 2. Add an Email Service (connect your iCloud account)
 // 3. Create two Email Templates:
 //      Volunteer template variables: from_name, from_email, skills, message
-//      Registration template variables: from_name, from_email, phone, school, grade, tracks, cv_link
+//      Registration template variables: from_name, from_email, phone, school, grade, tracks, cv_link, attendance, ml_username
 // 4. Replace the four values below with your credentials from the EmailJS dashboard
 const EMAILJS_PUBLIC_KEY = 'JcWG6TiYSS7HOl7oE';
 const EMAILJS_SERVICE_ID = 'service_9l0rztv';
@@ -48,6 +48,7 @@ export class App implements OnDestroy {
   registrationError = signal(false);
   registrationSubmittedName = signal('');
   registrationTracksError = signal(false);
+  registrationAttendanceError = signal(false);
 
   volunteerData = { name: '', email: '', skills: '', message: '' };
   registrationData = {
@@ -57,6 +58,8 @@ export class App implements OnDestroy {
     school: '',
     grade: '',
     cvLink: '',
+    attendanceMode: '',
+    mlUsername: '',
     tracks: { aiCompetition: false, hackathon: false, scientificShowcase: false },
   };
 
@@ -249,7 +252,9 @@ export class App implements OnDestroy {
     const tracks = this.registrationData.tracks;
     const hasTrack = tracks.aiCompetition || tracks.hackathon || tracks.scientificShowcase;
     this.registrationTracksError.set(!hasTrack);
-    if (!form.valid || !hasTrack || !this.emailjs) return;
+    const hasAttendance = !!this.registrationData.attendanceMode;
+    this.registrationAttendanceError.set(!hasAttendance);
+    if (!form.valid || !hasTrack || !hasAttendance || !this.emailjs) return;
 
     this.registrationLoading.set(true);
     this.registrationError.set(false);
@@ -257,6 +262,7 @@ export class App implements OnDestroy {
       .filter(([, checked]) => checked)
       .map(([key]) => this.trackLabels[key])
       .join(', ');
+    const isInPerson = this.registrationData.attendanceMode === 'in-person';
     try {
       await this.emailjs.send(EMAILJS_SERVICE_ID, REGISTRATION_TEMPLATE_ID, {
         from_name: this.registrationData.name,
@@ -266,6 +272,8 @@ export class App implements OnDestroy {
         grade: this.registrationData.grade,
         tracks: tracksSummary,
         cv_link: this.registrationData.cvLink || '—',
+        attendance: isInPerson ? 'In-Person' : 'Online',
+        ml_username: tracks.aiCompetition && isInPerson ? this.registrationData.mlUsername || '—' : '—',
       });
       this.registrationSubmittedName.set(this.registrationData.name.split(' ')[0]);
       this.registrationSubmitted.set(true);
