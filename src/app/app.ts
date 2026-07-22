@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 // 2. Add an Email Service (connect your iCloud account)
 // 3. Create two Email Templates:
 //      Volunteer template variables: from_name, from_email, skills, message
-//      Registration template variables: from_name, from_email, phone, school, grade, track
+//      Registration template variables: from_name, from_email, phone, school, grade, tracks, cv_link
 // 4. Replace the four values below with your credentials from the EmailJS dashboard
 const EMAILJS_PUBLIC_KEY = 'JcWG6TiYSS7HOl7oE';
 const EMAILJS_SERVICE_ID = 'service_9l0rztv';
@@ -47,9 +47,18 @@ export class App implements OnDestroy {
   registrationLoading = signal(false);
   registrationError = signal(false);
   registrationSubmittedName = signal('');
+  registrationTracksError = signal(false);
 
   volunteerData = { name: '', email: '', skills: '', message: '' };
-  registrationData = { name: '', email: '', phone: '', school: '', grade: '', participation: 'full' };
+  registrationData = {
+    name: '',
+    email: '',
+    phone: '',
+    school: '',
+    grade: '',
+    cvLink: '',
+    tracks: { aiCompetition: false, hackathon: false, scientificShowcase: false },
+  };
 
   private emailjs: any = null;
 
@@ -222,23 +231,32 @@ export class App implements OnDestroy {
       });
       this.volunteerSubmittedName.set(this.volunteerData.name.split(' ')[0]);
       this.volunteerSubmitted.set(true);
-    } catch {
+    } catch (err) {
+      console.error('EmailJS volunteer submission failed:', err);
       this.volunteerError.set(true);
     } finally {
       this.volunteerLoading.set(false);
     }
   }
 
+  private readonly trackLabels: Record<string, string> = {
+    aiCompetition: 'AI Competition',
+    hackathon: 'Hackathon',
+    scientificShowcase: 'Scientific Showcase',
+  };
+
   async submitRegistration(form: any) {
-    if (!form.valid || !this.emailjs) return;
+    const tracks = this.registrationData.tracks;
+    const hasTrack = tracks.aiCompetition || tracks.hackathon || tracks.scientificShowcase;
+    this.registrationTracksError.set(!hasTrack);
+    if (!form.valid || !hasTrack || !this.emailjs) return;
+
     this.registrationLoading.set(true);
     this.registrationError.set(false);
-    const tracks: Record<string, string> = {
-      full: 'Full Event (All 5 days)',
-      workshops: 'Workshops Only',
-      hackathon: 'Hackathon Only',
-      competition: 'AI Competition Only',
-    };
+    const tracksSummary = Object.entries(tracks)
+      .filter(([, checked]) => checked)
+      .map(([key]) => this.trackLabels[key])
+      .join(', ');
     try {
       await this.emailjs.send(EMAILJS_SERVICE_ID, REGISTRATION_TEMPLATE_ID, {
         from_name: this.registrationData.name,
@@ -246,11 +264,13 @@ export class App implements OnDestroy {
         phone: this.registrationData.phone || '—',
         school: this.registrationData.school,
         grade: this.registrationData.grade,
-        track: tracks[this.registrationData.participation],
+        tracks: tracksSummary,
+        cv_link: this.registrationData.cvLink || '—',
       });
       this.registrationSubmittedName.set(this.registrationData.name.split(' ')[0]);
       this.registrationSubmitted.set(true);
-    } catch {
+    } catch (err) {
+      console.error('EmailJS registration submission failed:', err);
       this.registrationError.set(true);
     } finally {
       this.registrationLoading.set(false);

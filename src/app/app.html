@@ -4,8 +4,8 @@
   <nav class="global-nav">
     <div class="global-nav-row">
       <a href="#hero" class="nav-brand">
-        <img src="logo_event.png" alt="From Algorithm to Neurons" class="nav-brand-mark" />
-        <span class="nav-brand-name">From Algorithm to Neurons</span>
+        <img src="logo_event.png" alt="From Algorithms to Neurons" class="nav-brand-mark" />
+        <span class="nav-brand-name">From Algorithms to Neurons</span>
       </a>
 
       <ul class="nav-links">
@@ -35,7 +35,7 @@
         </div>
 
         <h1 class="t-hero-display hero-title">
-          From Algorithm<br>to <em>Neurons</em>
+          From Algorithms<br>to <em>Neurons</em>
         </h1>
 
         <p class="t-lead-airy hero-lead">
@@ -49,25 +49,25 @@
         </div>
 
         <div class="hero-partners">
-          <div class="partner-item">
+          <a class="partner-item" href="https://romania.ieeer8.org/" target="_blank" rel="noopener noreferrer">
             <img src="ieee_logo.png" alt="IEEE Region 8 STEM & K-12" />
-          </div>
+          </a>
           <div class="hero-partners-divider"></div>
-          <div class="partner-item">
+          <a class="partner-item" href="https://informatica-viitor.ro" target="_blank" rel="noopener noreferrer">
             <img src="logo_ipv.png" alt="Informatică pentru Viitor" />
             <div class="hero-partners-text">
               <span class="t-body-strong">Informatică pentru Viitor</span>
               <span class="t-caption">Organizing Partner</span>
             </div>
-          </div>
+          </a>
           <div class="hero-partners-divider"></div>
-          <div class="partner-item">
+          <a class="partner-item" href="https://cmu-edu.eu/" target="_blank" rel="noopener noreferrer">
             <img src="logo_umc.jpeg" alt="Maritime University of Constanta" class="hero-partners-logo-boxed" />
             <div class="hero-partners-text">
               <span class="t-body-strong">Maritime University of Constanta</span>
               <span class="t-caption">Host University</span>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -166,7 +166,7 @@
         <div class="t-tagline">About the Event</div>
         <h2 class="t-display-lg">Where signals meet intelligence</h2>
         <p>
-          From Algorithm to Neurons is an intensive 5-day event held in
+          From Algorithms to Neurons is an intensive 5-day event held in
           <strong>Constanta, Romania</strong>,
           bringing together middle and high school students passionate about signal processing and artificial intelligence.
         </p>
@@ -390,13 +390,31 @@
 
           <div class="form-section">
             <div class="field">
-              <label>Participation Track <span class="required">*</span></label>
-              <select name="participation" [(ngModel)]="registrationData.participation" required class="input">
-                <option value="full">Full Event — All 5 Days</option>
-                <option value="workshops">Workshops Only (Fri–Sat)</option>
-                <option value="hackathon">Hackathon Only (Sat–Sun)</option>
-                <option value="competition">AI Competition Only (Sat)</option>
-              </select>
+              <label>Which track(s) are you registering for? <span class="required">*</span></label>
+              <div class="track-options">
+                <label class="track-option" [class.is-selected]="registrationData.tracks.aiCompetition">
+                  <input type="checkbox" name="track_ai" [(ngModel)]="registrationData.tracks.aiCompetition" />
+                  <span>AI Competition</span>
+                </label>
+                <label class="track-option" [class.is-selected]="registrationData.tracks.hackathon">
+                  <input type="checkbox" name="track_hackathon" [(ngModel)]="registrationData.tracks.hackathon" />
+                  <span>Hackathon</span>
+                </label>
+                <label class="track-option" [class.is-selected]="registrationData.tracks.scientificShowcase">
+                  <input type="checkbox" name="track_showcase" [(ngModel)]="registrationData.tracks.scientificShowcase" />
+                  <span>Scientific Showcase</span>
+                </label>
+              </div>
+              @if (registrationTracksError()) {
+                <span class="field-error-text">Select at least one track.</span>
+              }
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="field">
+              <label>CV Link <span class="hint">(optional — Google Drive, shared so anyone with the link can view)</span></label>
+              <input name="cvLink" [(ngModel)]="registrationData.cvLink" type="url" placeholder="https://drive.google.com/…" class="input" />
             </div>
           </div>
 
@@ -431,16 +449,22 @@
       <div class="footer-grid">
 
         <div>
-          <div class="footer-brand-name">From Algorithm to Neurons</div>
+          <div class="footer-brand-name">From Algorithms to Neurons</div>
           <div class="footer-brand-meta">August 20–24, 2026 · Constanta, Romania</div>
         </div>
 
         <div class="footer-partners">
-          <img src="ieee_logo.png" alt="IEEE Region 8 STEM & K-12" />
+          <a href="https://romania.ieeer8.org/" target="_blank" rel="noopener noreferrer">
+            <img src="ieee_logo.png" alt="IEEE Region 8 STEM & K-12" />
+          </a>
           <div class="footer-partners-divider"></div>
-          <img src="logo_ipv.png" alt="Informatică pentru Viitor" />
+          <a href="https://informatica-viitor.ro" target="_blank" rel="noopener noreferrer">
+            <img src="logo_ipv.png" alt="Informatică pentru Viitor" />
+          </a>
           <div class="footer-partners-divider"></div>
-          <img src="logo_umc.jpeg" alt="Maritime University of Constanta" class="footer-partners-logo-boxed" />
+          <a href="https://cmu-edu.eu/" target="_blank" rel="noopener noreferrer">
+            <img src="logo_umc.jpeg" alt="Maritime University of Constanta" class="footer-partners-logo-boxed" />
+          </a>
         </div>
 
         <div class="footer-links">
@@ -452,7 +476,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="t-fine-print">© 2026 From Algorithm to Neurons. All rights reserved.</p>
+        <p class="t-fine-print">© 2026 From Algorithms to Neurons. All rights reserved.</p>
       </div>
     </div>
   </footer>
