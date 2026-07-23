@@ -104,12 +104,12 @@ export class App implements OnDestroy {
         },
         {
           title: 'Workshop: Signal Reading Machine — Hands-On',
-          time: '14:00 – 16:00',
+          time: '14:00 – 17:00',
           badge: 'Workshop',
         },
         {
           title: 'Workshops',
-          time: '16:00 – 17:00',
+          time: '17:00 – 18:00',
         },
         {
           title: 'Social Night',
@@ -123,7 +123,7 @@ export class App implements OnDestroy {
       events: [
         {
           title: 'Competitive AI Competition',
-          time: '10:00 – 13:00',
+          time: '09:00 – 13:00',
           badge: '3 Hours',
         },
         {
