@@ -132,24 +132,23 @@
 
         <div class="utility-card">
           <span class="chip chip--on-light utility-card-label">Group A</span>
-          <h3>Gymnasium &amp; Grades 9–10</h3>
-          <span class="t-caption">Approx. ages 11–16</span>
+          <h3>Grades 7–10</h3>
+          <span class="t-caption">Approx. ages 13–16</span>
           <ul class="utility-list">
-            <li>Gymnasium students (grades 5–8)</li>
+            <li>Gymnasium students (7th &amp; 8th grade)</li>
             <li>High school 9th &amp; 10th grade</li>
             <li>Introductory signal processing &amp; AI challenges</li>
-            <li>Separate hackathon category &amp; judging criteria</li>
           </ul>
         </div>
 
         <div class="utility-card">
           <span class="chip chip--on-light utility-card-label">Group B</span>
-          <h3>Grades 11–12</h3>
-          <span class="t-caption">Approx. ages 17–18</span>
+          <h3>Grades 11–12 &amp; Undergraduate</h3>
+          <span class="t-caption">Approx. ages 17+</span>
           <ul class="utility-list">
             <li>High school 11th &amp; 12th grade</li>
+            <li>Undergraduate students</li>
             <li>Advanced signal processing &amp; AI challenges</li>
-            <li>Separate hackathon category &amp; judging criteria</li>
             <li>Higher complexity problem sets</li>
           </ul>
         </div>
@@ -322,13 +321,13 @@
         <h2 class="t-display-lg">Register Now</h2>
         <p class="t-body">
           Secure your spot — August 20–24, 2026 in Constanta, Romania.
-          Open to middle and high school students in both age group tracks.
+          Open to middle school, high school, and undergraduate students across both age group tracks.
         </p>
       </div>
 
       <div class="reminder-card">
-        <div class="reminder-row"><span class="reminder-row-label">Group A</span><span class="reminder-row-value">Gymnasium + Grades 9–10</span></div>
-        <div class="reminder-row"><span class="reminder-row-label">Group B</span><span class="reminder-row-value">Grades 11–12</span></div>
+        <div class="reminder-row"><span class="reminder-row-label">Group A</span><span class="reminder-row-value">Grades 7–10</span></div>
+        <div class="reminder-row"><span class="reminder-row-label">Group B</span><span class="reminder-row-value">Grades 11–12 &amp; Undergraduate</span></div>
       </div>
 
       @if (registrationSubmitted()) {
@@ -371,8 +370,6 @@
               <select name="grade" [(ngModel)]="registrationData.grade" required class="input">
                 <option value="" disabled>Select grade…</option>
                 <optgroup label="Group A — Gymnasium">
-                  <option value="5th Grade">5th Grade</option>
-                  <option value="6th Grade">6th Grade</option>
                   <option value="7th Grade">7th Grade</option>
                   <option value="8th Grade">8th Grade</option>
                 </optgroup>
@@ -383,6 +380,9 @@
                 <optgroup label="Group B — High School (11th–12th)">
                   <option value="11th Grade">11th Grade</option>
                   <option value="12th Grade">12th Grade</option>
+                </optgroup>
+                <optgroup label="Group B — Undergraduate">
+                  <option value="Undergraduate">Undergraduate</option>
                 </optgroup>
               </select>
             </div>
@@ -441,8 +441,8 @@
 
           <div class="form-section">
             <div class="field">
-              <label>CV Link <span class="hint">(optional — Google Drive, shared so anyone with the link can view)</span></label>
-              <input name="cvLink" [(ngModel)]="registrationData.cvLink" type="url" placeholder="https://drive.google.com/…" class="input" />
+              <label>CV Link <span class="required">*</span> <span class="hint">(Google Drive, shared so anyone with the link can view)</span></label>
+              <input name="cvLink" [(ngModel)]="registrationData.cvLink" required type="url" placeholder="https://drive.google.com/…" class="input" />
             </div>
           </div>
 
@@ -479,6 +479,7 @@
         <div>
           <div class="footer-brand-name">From Algorithms to Neurons</div>
           <div class="footer-brand-meta">August 20–24, 2026 · Constanta, Romania</div>
+          <a class="footer-contact" href="mailto:contact.algorithm.neurons@gmail.com">contact.algorithm.neurons@gmail.com</a>
         </div>
 
         <div class="footer-partners">

@@ -123,8 +123,8 @@ export class App implements OnDestroy {
       events: [
         {
           title: 'Competitive AI Competition',
-          time: '09:00 – 13:00',
-          badge: '3 Hours',
+          time: '09:00 – 14:00',
+          badge: '5 Hours',
         },
         {
           title: 'Workshop: Digital Signals',

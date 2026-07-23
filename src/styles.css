@@ -423,6 +423,8 @@ select.input {
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-lg); align-items: center; }
 .footer-brand-name { font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
 .footer-brand-meta { font-size: 0.78rem; color: var(--ink-muted-48); }
+.footer-contact { display: inline-block; margin-top: 4px; font-size: 0.78rem; color: var(--primary); text-decoration: none; }
+.footer-contact:hover { text-decoration: underline; }
 .footer-partners { display: flex; align-items: center; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
 .footer-partners a { display: flex; align-items: center; opacity: 0.85; transition: opacity 0.15s ease; }
 .footer-partners a:hover { opacity: 1; }
