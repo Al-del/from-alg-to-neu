@@ -262,6 +262,7 @@ a { color: inherit; }
 
 /* ── Utility card grid (Age Groups) ────────────────────────────────── */
 .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+.card-grid--three { grid-template-columns: repeat(3, 1fr); }
 .utility-card {
   background: var(--canvas);
   border: 1px solid var(--hairline);
@@ -271,6 +272,23 @@ a { color: inherit; }
 .utility-card-label { margin-bottom: var(--space-md); }
 .utility-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; margin: 0 0 4px; }
 .utility-card .t-caption { color: var(--ink-muted-48); margin-bottom: var(--space-md); display: block; }
+
+.doc-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+.doc-card:hover { border-color: var(--primary); }
+.doc-card:active { transform: scale(0.98); }
+.doc-card h3 { display: flex; align-items: center; gap: 6px; }
+.doc-card h3::after {
+  content: '↓';
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.doc-card .t-caption { margin-bottom: 0; }
 .utility-list { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
 .utility-list li {
   display: flex;
