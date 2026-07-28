@@ -443,6 +443,10 @@ select.input {
 .footer-brand-meta { font-size: 0.78rem; color: var(--ink-muted-48); }
 .footer-contact { display: inline-block; margin-top: 4px; font-size: 0.78rem; color: var(--primary); text-decoration: none; }
 .footer-contact:hover { text-decoration: underline; }
+
+.footer-social { display: flex; gap: 12px; margin-top: 10px; }
+.footer-social a { color: var(--ink-muted-48); transition: color 0.15s ease; }
+.footer-social a:hover { color: var(--primary); }
 .footer-partners { display: flex; align-items: center; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
 .footer-partners a { display: flex; align-items: center; opacity: 0.85; transition: opacity 0.15s ease; }
 .footer-partners a:hover { opacity: 1; }
