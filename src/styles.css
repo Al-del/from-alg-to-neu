@@ -263,6 +263,7 @@ a { color: inherit; }
 /* ── Utility card grid (Age Groups) ────────────────────────────────── */
 .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
 .card-grid--three { grid-template-columns: repeat(3, 1fr); }
+.card-grid--four { grid-template-columns: repeat(4, 1fr); }
 .utility-card {
   background: var(--canvas);
   border: 1px solid var(--hairline);
@@ -474,6 +475,7 @@ input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; }
   .about-grid { grid-template-columns: 1fr; }
   .card-grid,
   .form-row { grid-template-columns: 1fr; }
+  .card-grid--four { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
   .footer-grid { grid-template-columns: 1fr; text-align: center; }
   .footer-links { justify-content: center; }
@@ -485,4 +487,5 @@ input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; }
   .countdown-grid { grid-template-columns: 1fr 1fr; }
   .schedule-row { flex-direction: column; }
   .hero-partners { gap: var(--space-md); }
+  .card-grid--four { grid-template-columns: 1fr; }
 }
