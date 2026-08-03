@@ -264,6 +264,17 @@ a { color: inherit; }
 .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
 .card-grid--three { grid-template-columns: repeat(3, 1fr); }
 .card-grid--four { grid-template-columns: repeat(4, 1fr); }
+.card-grid + .card-grid,
+.doc-group-label + .card-grid { margin-top: var(--space-lg); }
+
+.doc-group-label {
+  margin-top: var(--space-xxl);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
 .utility-card {
   background: var(--canvas);
   border: 1px solid var(--hairline);
