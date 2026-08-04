@@ -97,7 +97,7 @@ export class Committee {
         },
         {
           name: 'Cristina Dragomir',
-          role: 'Conf. univ. dr. ing.',
+          role: 'Conf. univ. dr. .',
           photo: 'committee/cristina-dragomir.jpg',
         },
       ],
