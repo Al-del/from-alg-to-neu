@@ -107,7 +107,7 @@ export class Committee {
       members: [
         {
           name: 'Dedu Răzvan-Matei',
-          role: 'Silver medal CEOAI, IAIO 2027 participant',
+          role: 'Silver medal CEOAI, IAIO 2027 participant, 1st place ONIA',
           photo: 'committee/dedu-razvan-matei.jpg',
         },
         {
@@ -153,7 +153,7 @@ export class Committee {
         },
                {
           name: 'Dedu Răzvan-Matei',
-          role: 'Silver medal CEOAI, IAIO 2027 participant',
+          role: 'Silver medal CEOAI, IAIO 2027 participant, 1st place ONIA',
           photo: 'committee/dedu-razvan-matei.jpg',
         },
         {
