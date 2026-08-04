@@ -107,7 +107,7 @@ export class Committee {
       members: [
         {
           name: 'Dedu Răzvan-Matei',
-          role: 'Silver medal CEOAI, IAIO participant',
+          role: 'Silver medal CEOAI, IAIO 2027 participant',
           photo: 'committee/dedu-razvan-matei.jpg',
         },
         {
@@ -150,6 +150,11 @@ export class Committee {
           name: 'Gabriel Raicu',
           role: 'Conf. univ. dr. ing.',
           photo: 'committee/gabriel-raicu.jpg',
+        },
+               {
+          name: 'Dedu Răzvan-Matei',
+          role: 'Silver medal CEOAI, IAIO 2027 participant',
+          photo: 'committee/dedu-razvan-matei.jpg',
         },
         {
           name: 'Alexandru Pescaru',
