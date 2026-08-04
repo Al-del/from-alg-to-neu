@@ -4,11 +4,12 @@ import { RouterLink } from '@angular/router';
 interface CommitteeMember {
   name: string;
   role: string;
-  photo: string;
+  photo?: string;
 }
 
 interface CommitteeGroup {
   label: string;
+  subtitle?: string;
   members: CommitteeMember[];
 }
 
@@ -19,6 +20,16 @@ interface CommitteeGroup {
   styleUrl: './app.css',
 })
 export class Committee {
+  private readonly brokenPhotos = new Set<string>();
+
+  photoFailed(photo: string): boolean {
+    return this.brokenPhotos.has(photo);
+  }
+
+  onPhotoError(photo: string): void {
+    this.brokenPhotos.add(photo);
+  }
+
   readonly groups: CommitteeGroup[] = [
     {
       label: 'General Committee',
@@ -48,15 +59,26 @@ export class Committee {
           role: 'Decan, Facultatea de Inginerie Electrică și Știința Calculatoarelor',
           photo: 'committee/dan-milici.jpg',
         },
+        {
+          name: 'Gabriel Raicu',
+          role: 'Conf. univ. dr. ing.',
+          photo: 'committee/gabriel-raicu.jpg',
+        },
       ],
     },
     {
       label: 'Scientific Paper Committee',
+      subtitle: 'Judging: August 21, 10:00–11:00 & August 23, 17:00',
       members: [
         {
           name: 'L. Dan Milici',
           role: 'Decan, Facultatea de Inginerie Electrică și Știința Calculatoarelor',
-          photo: 'committee/dan-milici.jpg',
+          photo: 'committee/dan-milici.jpg', //maria_toader.jpg
+        },
+                {
+          name: 'Maria Toader',
+          role: 'Two times silver medalist ONCS, third place Scientific papers competition',
+          photo: 'committee/maria_toader.jpg', //maria_toader.jpg
         },
         {
           name: 'Tatiana Barbaros',
@@ -72,6 +94,11 @@ export class Committee {
           name: 'Alexandra Raicu',
           role: 'Associate Professor, PhD in Engineering at Constanta Maritime University',
           photo: 'committee/alexandra-raicu.jpg',
+        },
+        {
+          name: 'Cristina Dragomir',
+          role: 'Conf. univ. dr. ing.',
+          photo: 'committee/cristina-dragomir.jpg',
         },
       ],
     },
@@ -107,12 +134,8 @@ export class Committee {
     },
     {
       label: 'Hackathon Committee',
+      subtitle: 'Judging: August 23, 17:00',
       members: [
-        {
-          name: 'Alexandra Raicu',
-          role: 'Associate Professor, PhD in Engineering at Constanta Maritime University',
-          photo: 'committee/alexandra-raicu.jpg',
-        },
         {
           name: 'Mădălina Cerșamba',
           role: 'Asist. Univ. Drd. Ing.',
@@ -123,7 +146,27 @@ export class Committee {
           role: 'AI & Technology Advisor | Digital Products Lead | International Speaker',
           photo: 'committee/alex-bordei.jpg',
         },
+        {
+          name: 'Gabriel Raicu',
+          role: 'Conf. univ. dr. ing.',
+          photo: 'committee/gabriel-raicu.jpg',
+        },
+        {
+          name: 'Alexandru Pescaru',
+          role: 'Ș.l. univ. dr. ing.',
+          photo: 'committee/alex-pesc.jpg',
+        },
       ],
     },
   ];
+
+  initials(name: string): string {
+    return name
+      .split(' ')
+      .filter(Boolean)
+      .map((part) => part[0])
+      .join('')
+      .slice(0, 2)
+      .toUpperCase();
+  }
 }

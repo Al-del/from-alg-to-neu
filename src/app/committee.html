@@ -39,12 +39,19 @@
       <div class="container-wide">
         <div class="tile-header">
           <h2 class="t-display-lg">{{ group.label }}</h2>
+          @if (group.subtitle) {
+            <p class="t-body committee-subtitle">{{ group.subtitle }}</p>
+          }
         </div>
 
         <div class="committee-grid">
           @for (member of group.members; track member.name) {
             <div class="committee-card">
-              <img class="committee-photo" [src]="member.photo" [alt]="member.name" />
+              @if (member.photo && !photoFailed(member.photo)) {
+                <img class="committee-photo" [src]="member.photo" [alt]="member.name" (error)="onPhotoError(member.photo!)" />
+              } @else {
+                <div class="committee-photo committee-photo--placeholder">{{ initials(member.name) }}</div>
+              }
               <h3 class="committee-name">{{ member.name }}</h3>
               <p class="committee-role">{{ member.role }}</p>
             </div>

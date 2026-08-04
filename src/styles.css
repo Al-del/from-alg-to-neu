@@ -261,6 +261,17 @@ a { color: inherit; }
 }
 .tile--dark .committee-role,
 .tile--dark-2 .committee-role { color: var(--body-muted); }
+.committee-subtitle { margin-top: var(--space-xs); }
+.committee-photo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--divider-soft);
+}
 
 /* ── Hero ──────────────────────────────────────────────────────────── */
 .hero-grid { display: grid; grid-template-columns: 3fr 2fr; gap: var(--space-xxl); align-items: start; }
