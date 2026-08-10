@@ -526,6 +526,28 @@ select.input {
 .footer-bottom { margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid var(--hairline); }
 .footer-bottom p { color: var(--ink-muted-48); margin: 0; }
 
+.footer-sponsors { margin-top: var(--space-xl); padding-top: var(--space-xl); border-top: 1px solid var(--hairline); text-align: center; }
+.footer-sponsors-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted-48);
+  margin-bottom: var(--space-md);
+}
+.footer-sponsors-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-md); }
+.footer-sponsor-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 8px 20px;
+  background: var(--canvas);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+}
+.footer-sponsor-card img { max-height: 34px; max-width: 130px; object-fit: contain; }
+
 /* ── Scrollbar ─────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--canvas); }
