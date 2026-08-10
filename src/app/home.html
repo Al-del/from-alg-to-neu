@@ -2,23 +2,31 @@
 
   <nav class="global-nav">
     <div class="global-nav-row">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+
       <a href="#hero" class="nav-brand">
         <img src="logo_event.png" alt="From Algorithms to Neurons" class="nav-brand-mark" />
         <span class="nav-brand-name">From Algorithms to Neurons</span>
       </a>
 
-      <ul class="nav-links">
-        <li><a class="nav-link" href="#about">About</a></li>
-        <li><a class="nav-link" href="#age-groups">Age Groups</a></li>
-        <li><a class="nav-link" href="#schedule">Schedule</a></li>
-        <li><a class="nav-link" href="#rules">Rules</a></li>
-        <li><a class="nav-link" routerLink="/committee">Committee</a></li>
-        <li><a class="nav-link" href="#volunteer">Volunteer</a></li>
-      </ul>
+      <label for="nav-toggle" class="nav-toggle-btn" aria-label="Toggle menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </label>
 
       <div class="nav-actions">
         <a href="#register" class="btn btn--primary btn--nav">Register</a>
       </div>
+
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#about" onclick="document.getElementById('nav-toggle').checked=false">About</a></li>
+        <li><a class="nav-link" href="#age-groups" onclick="document.getElementById('nav-toggle').checked=false">Age Groups</a></li>
+        <li><a class="nav-link" href="#schedule" onclick="document.getElementById('nav-toggle').checked=false">Schedule</a></li>
+        <li><a class="nav-link" href="#rules" onclick="document.getElementById('nav-toggle').checked=false">Rules</a></li>
+        <li><a class="nav-link" routerLink="/committee" onclick="document.getElementById('nav-toggle').checked=false">Committee</a></li>
+        <li><a class="nav-link" href="#volunteer" onclick="document.getElementById('nav-toggle').checked=false">Volunteer</a></li>
+      </ul>
     </div>
   </nav>
 
