@@ -519,6 +519,9 @@ select.input {
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 16px;
 }
+.form-success-icon--closed { background: var(--divider-soft); border-color: var(--hairline); }
+.tile--dark .form-success-icon--closed,
+.tile--dark-2 .form-success-icon--closed { background: rgba(255, 255, 255, 0.06); border-color: var(--hairline-on-dark); }
 .form-success h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; margin: 0 0 6px; }
 .form-success p { font-size: 0.85rem; color: var(--ink-muted-48); margin: 0; }
 

@@ -2,19 +2,6 @@ import { Component, signal, OnDestroy, afterNextRender } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
-// ─── EmailJS Configuration ────────────────────────────────────────────────────
-// 1. Sign up free at https://www.emailjs.com
-// 2. Add an Email Service (connect your iCloud account)
-// 3. Create two Email Templates:
-//      Volunteer template variables: from_name, from_email, skills, message
-//      Registration template variables: from_name, from_email, phone, school, grade, tracks, cv_link, attendance, ml_username
-// 4. Replace the four values below with your credentials from the EmailJS dashboard
-const EMAILJS_PUBLIC_KEY = 'JcWG6TiYSS7HOl7oE';
-const EMAILJS_SERVICE_ID = 'service_9l0rztv';
-const VOLUNTEER_TEMPLATE_ID = 'template_jgwhxjc';
-const REGISTRATION_TEMPLATE_ID = 'template_nn2cs28';
-// ─────────────────────────────────────────────────────────────────────────────
-
 interface ScheduleEvent {
   title: string;
   time?: string;
@@ -37,33 +24,6 @@ interface ScheduleDay {
 export class Home implements OnDestroy {
   activeDay = signal(0);
   countdown = signal({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  volunteerSubmitted = signal(false);
-  volunteerLoading = signal(false);
-  volunteerError = signal(false);
-  volunteerSubmittedName = signal('');
-
-  registrationSubmitted = signal(false);
-  registrationLoading = signal(false);
-  registrationError = signal(false);
-  registrationSubmittedName = signal('');
-  registrationTracksError = signal(false);
-  registrationAttendanceError = signal(false);
-
-  volunteerData = { name: '', email: '', skills: '', message: '' };
-  registrationData = {
-    name: '',
-    email: '',
-    phone: '',
-    school: '',
-    grade: '',
-    cvLink: '',
-    attendanceMode: '',
-    mlUsername: '',
-    tracks: { aiCompetition: false, hackathon: false, scientificShowcase: false },
-  };
-
-  private emailjs: any = null;
 
   readonly days: ScheduleDay[] = [
     {
@@ -183,15 +143,8 @@ export class Home implements OnDestroy {
 
   constructor() {
     afterNextRender(() => {
-      // Lazy-load EmailJS so it never runs during SSR
-      import('@emailjs/browser').then((mod) => {
-        this.emailjs = mod.default;
-        this.emailjs.init(EMAILJS_PUBLIC_KEY);
-      });
-
       this.updateCountdown();
       this.countdownInterval = setInterval(() => this.updateCountdown(), 1000);
-
     });
   }
 
@@ -219,69 +172,5 @@ export class Home implements OnDestroy {
 
   setActiveDay(i: number) {
     this.activeDay.set(i);
-  }
-
-  async submitVolunteer(form: any) {
-    if (!form.valid || !this.emailjs) return;
-    this.volunteerLoading.set(true);
-    this.volunteerError.set(false);
-    try {
-      await this.emailjs.send(EMAILJS_SERVICE_ID, VOLUNTEER_TEMPLATE_ID, {
-        from_name: this.volunteerData.name,
-        from_email: this.volunteerData.email,
-        skills: this.volunteerData.skills || '—',
-        message: this.volunteerData.message || '—',
-      });
-      this.volunteerSubmittedName.set(this.volunteerData.name.split(' ')[0]);
-      this.volunteerSubmitted.set(true);
-    } catch (err) {
-      console.error('EmailJS volunteer submission failed:', err);
-      this.volunteerError.set(true);
-    } finally {
-      this.volunteerLoading.set(false);
-    }
-  }
-
-  private readonly trackLabels: Record<string, string> = {
-    aiCompetition: 'AI Competition',
-    hackathon: 'Hackathon',
-    scientificShowcase: 'Scientific Showcase',
-  };
-
-  async submitRegistration(form: any) {
-    const tracks = this.registrationData.tracks;
-    const hasTrack = tracks.aiCompetition || tracks.hackathon || tracks.scientificShowcase;
-    this.registrationTracksError.set(!hasTrack);
-    const hasAttendance = !!this.registrationData.attendanceMode;
-    this.registrationAttendanceError.set(!hasAttendance);
-    if (!form.valid || !hasTrack || !hasAttendance || !this.emailjs) return;
-
-    this.registrationLoading.set(true);
-    this.registrationError.set(false);
-    const tracksSummary = Object.entries(tracks)
-      .filter(([, checked]) => checked)
-      .map(([key]) => this.trackLabels[key])
-      .join(', ');
-    const isInPerson = this.registrationData.attendanceMode === 'in-person';
-    try {
-      await this.emailjs.send(EMAILJS_SERVICE_ID, REGISTRATION_TEMPLATE_ID, {
-        from_name: this.registrationData.name,
-        from_email: this.registrationData.email,
-        phone: this.registrationData.phone || '—',
-        school: this.registrationData.school,
-        grade: this.registrationData.grade,
-        tracks: tracksSummary,
-        cv_link: this.registrationData.cvLink || '—',
-        attendance: isInPerson ? 'In-Person' : 'Online',
-        ml_username: tracks.aiCompetition && isInPerson ? this.registrationData.mlUsername || '—' : '—',
-      });
-      this.registrationSubmittedName.set(this.registrationData.name.split(' ')[0]);
-      this.registrationSubmitted.set(true);
-    } catch (err) {
-      console.error('EmailJS registration submission failed:', err);
-      this.registrationError.set(true);
-    } finally {
-      this.registrationLoading.set(false);
-    }
   }
 }

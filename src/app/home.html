@@ -313,67 +313,19 @@
       <div class="tile-header">
         <div class="t-tagline">Get Involved</div>
         <h2 class="t-display-lg">Call for Volunteers</h2>
-        <p class="t-body">Help us make this event unforgettable. We're looking for motivated people to join our organizing team.</p>
+        <p class="t-body">Help us make this event unforgettable.</p>
       </div>
 
-      @if (volunteerSubmitted()) {
-        <div class="form-card form-success">
-          <div class="form-success-icon">
-            <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h3>Thanks {{ volunteerSubmittedName() }}, your application was submitted!</h3>
-          <p>We'll review it and get back to you soon.</p>
+      <div class="form-card form-success">
+        <div class="form-success-icon form-success-icon--closed">
+          <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="var(--ink-muted-48)" stroke-width="2.5">
+            <circle cx="12" cy="12" r="9" />
+            <path stroke-linecap="round" d="M9 9l6 6M15 9l-6 6" />
+          </svg>
         </div>
-      } @else {
-        <form #volunteerFormRef="ngForm" (ngSubmit)="submitVolunteer(volunteerFormRef)" novalidate class="form-card">
-          <div class="form-section form-row">
-            <div class="field">
-              <label>Full Name <span class="required">*</span></label>
-              <input name="name" [(ngModel)]="volunteerData.name" required type="text" autocomplete="name" placeholder="Your full name" class="input" />
-            </div>
-            <div class="field">
-              <label>Email <span class="required">*</span></label>
-              <input name="email" [(ngModel)]="volunteerData.email" required type="email" autocomplete="email" placeholder="you@example.com" class="input" />
-            </div>
-          </div>
-
-          <div class="form-section">
-            <div class="field">
-              <label>Skills &amp; Expertise</label>
-              <input name="skills" [(ngModel)]="volunteerData.skills" type="text" placeholder="e.g. Event coordination, Arduino, Technical support…" class="input" />
-            </div>
-          </div>
-
-          <div class="form-section">
-            <div class="field">
-              <label>Why do you want to volunteer?</label>
-              <textarea name="message" [(ngModel)]="volunteerData.message" rows="4" placeholder="Tell us about your motivation and what you can contribute…" class="input" style="resize:vertical;"></textarea>
-            </div>
-          </div>
-
-          @if (volunteerError()) {
-            <p class="form-error">Something went wrong. Please check your connection and try again.</p>
-          }
-
-          <div class="form-section">
-            <button type="submit" [disabled]="volunteerLoading()" class="btn btn--primary btn--block">
-              @if (volunteerLoading()) {
-                <span style="display:inline-flex;align-items:center;justify-content:center;gap:8px;">
-                  <svg style="width:16px;height:16px;animation:spin 1s linear infinite;" fill="none" viewBox="0 0 24 24">
-                    <circle style="opacity:0.25;" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path style="opacity:0.75;" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 22 6.373 22 12h-4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Sending…
-                </span>
-              } @else {
-                Submit Application
-              }
-            </button>
-          </div>
-        </form>
-      }
+        <h3>Volunteer applications are closed</h3>
+        <p>Thanks for your interest — we're no longer accepting volunteer applications for this edition.</p>
+      </div>
 
     </div>
   </section>
@@ -396,143 +348,16 @@
         <div class="reminder-row"><span class="reminder-row-label">Group B</span><span class="reminder-row-value">Grades 11–12 &amp; Undergraduate</span></div>
       </div>
 
-      @if (registrationSubmitted()) {
-        <div class="form-card form-success">
-          <div class="form-success-icon">
-            <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h3>Thanks {{ registrationSubmittedName() }}, your application was submitted!</h3>
-          <p>We'll be in touch with next steps. See you in Constanta!</p>
+      <div class="form-card form-success">
+        <div class="form-success-icon form-success-icon--closed">
+          <svg style="width:20px;height:20px;" fill="none" viewBox="0 0 24 24" stroke="var(--ink-muted-48)" stroke-width="2.5">
+            <circle cx="12" cy="12" r="9" />
+            <path stroke-linecap="round" d="M9 9l6 6M15 9l-6 6" />
+          </svg>
         </div>
-      } @else {
-        <form #registrationFormRef="ngForm" (ngSubmit)="submitRegistration(registrationFormRef)" novalidate class="form-card">
-          <div class="form-section form-row">
-            <div class="field">
-              <label>Full Name <span class="required">*</span></label>
-              <input name="name" [(ngModel)]="registrationData.name" required type="text" autocomplete="name" placeholder="Your full name" class="input" />
-            </div>
-            <div class="field">
-              <label>Email <span class="required">*</span></label>
-              <input name="email" [(ngModel)]="registrationData.email" required type="email" autocomplete="email" placeholder="you@example.com" class="input" />
-            </div>
-          </div>
-
-          <div class="form-section">
-            <div class="field">
-              <label>Phone <span class="hint">(optional)</span></label>
-              <input name="phone" [(ngModel)]="registrationData.phone" type="tel" autocomplete="tel" placeholder="+40 700 000 000" class="input" />
-            </div>
-          </div>
-
-          <div class="form-section form-row">
-            <div class="field">
-              <label>School <span class="required">*</span></label>
-              <input name="school" [(ngModel)]="registrationData.school" required type="text" placeholder="e.g. Liceul Teoretic Ovidius" class="input" />
-            </div>
-            <div class="field">
-              <label>Grade / Year <span class="required">*</span></label>
-              <select name="grade" [(ngModel)]="registrationData.grade" required class="input">
-                <option value="" disabled>Select grade…</option>
-                <optgroup label="Group A — Gymnasium">
-                  <option value="7th Grade">7th Grade</option>
-                  <option value="8th Grade">8th Grade</option>
-                </optgroup>
-                <optgroup label="Group A — High School (9th–10th)">
-                  <option value="9th Grade">9th Grade</option>
-                  <option value="10th Grade">10th Grade</option>
-                </optgroup>
-                <optgroup label="Group B — High School (11th–12th)">
-                  <option value="11th Grade">11th Grade</option>
-                  <option value="12th Grade">12th Grade</option>
-                </optgroup>
-                <optgroup label="Group B — Undergraduate">
-                  <option value="Undergraduate">Undergraduate</option>
-                </optgroup>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-section">
-            <div class="field">
-              <label>Which track(s) are you registering for? <span class="required">*</span></label>
-              <div class="track-options">
-                <label class="track-option" [class.is-selected]="registrationData.tracks.aiCompetition">
-                  <input type="checkbox" name="track_ai" [(ngModel)]="registrationData.tracks.aiCompetition" />
-                  <span>AI Competition</span>
-                </label>
-                <label class="track-option" [class.is-selected]="registrationData.tracks.hackathon">
-                  <input type="checkbox" name="track_hackathon" [(ngModel)]="registrationData.tracks.hackathon" />
-                  <span>Hackathon</span>
-                </label>
-                <label class="track-option" [class.is-selected]="registrationData.tracks.scientificShowcase">
-                  <input type="checkbox" name="track_showcase" [(ngModel)]="registrationData.tracks.scientificShowcase" />
-                  <span>Scientific Showcase</span>
-                </label>
-              </div>
-              @if (registrationTracksError()) {
-                <span class="field-error-text">Select at least one track.</span>
-              }
-            </div>
-          </div>
-
-          <div class="form-section">
-            <div class="field">
-              <label>Will you attend in person or online? <span class="required">*</span></label>
-              <div class="track-options">
-                <label class="track-option" [class.is-selected]="registrationData.attendanceMode === 'in-person'">
-                  <input type="radio" name="attendanceMode" value="in-person" [(ngModel)]="registrationData.attendanceMode" />
-                  <span>In-Person</span>
-                </label>
-                <label class="track-option" [class.is-selected]="registrationData.attendanceMode === 'online'">
-                  <input type="radio" name="attendanceMode" value="online" [(ngModel)]="registrationData.attendanceMode" />
-                  <span>Online</span>
-                </label>
-              </div>
-              @if (registrationAttendanceError()) {
-                <span class="field-error-text">Select whether you'll attend in person or online.</span>
-              }
-            </div>
-          </div>
-
-          @if (registrationData.tracks.aiCompetition && registrationData.attendanceMode === 'in-person') {
-            <div class="form-section">
-              <div class="field">
-                <label>MLCompetete Username <span class="required">*</span></label>
-                <input name="mlUsername" [(ngModel)]="registrationData.mlUsername" required type="text" placeholder="Your MLCompetete username" class="input" />
-              </div>
-            </div>
-          }
-
-          <div class="form-section">
-            <div class="field">
-              <label>CV Link <span class="required">*</span> <span class="hint">(Google Drive, shared so anyone with the link can view)</span></label>
-              <input name="cvLink" [(ngModel)]="registrationData.cvLink" required type="url" placeholder="https://drive.google.com/…" class="input" />
-            </div>
-          </div>
-
-          @if (registrationError()) {
-            <p class="form-error">Something went wrong. Please check your connection and try again.</p>
-          }
-
-          <div class="form-section">
-            <button type="submit" [disabled]="registrationLoading()" class="btn btn--primary btn--block">
-              @if (registrationLoading()) {
-                <span style="display:inline-flex;align-items:center;justify-content:center;gap:8px;">
-                  <svg style="width:16px;height:16px;animation:spin 1s linear infinite;" fill="none" viewBox="0 0 24 24">
-                    <circle style="opacity:0.25;" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path style="opacity:0.75;" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 22 6.373 22 12h-4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Sending…
-                </span>
-              } @else {
-                Complete Registration
-              }
-            </button>
-          </div>
-        </form>
-      }
+        <h3>Registration is closed</h3>
+        <p>We're no longer accepting registrations for this edition. Thanks for your interest — follow us on Instagram or Discord for updates on future events.</p>
+      </div>
 
     </div>
   </section>
