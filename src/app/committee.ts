@@ -46,17 +46,17 @@ export class Committee {
         },
         {
           name: 'Mădălina Cerșamba',
-          role: 'Asist. Univ. Drd. Ing.',
+          role: 'Assistant Lecturer, PhD Candidate (Eng.)',
           photo: 'committee/madalina-cersamba.jpg',
         },
         {
           name: 'Tatiana Barbaros',
-          role: 'Psiholog, Lector Universitar Dr.',
+          role: 'Psychologist, Lecturer, PhD',
           photo: 'committee/tatiana-barbaros.jpg',
         },
         {
           name: 'L. Dan Milici',
-          role: 'Decan, Facultatea de Inginerie Electrică și Știința Calculatoarelor',
+          role: 'Dean, Faculty of Electrical Engineering and Computer Science',
           photo: 'committee/dan-milici.jpg',
         },
         {
@@ -72,7 +72,7 @@ export class Committee {
       members: [
         {
           name: 'L. Dan Milici',
-          role: 'Decan, Facultatea de Inginerie Electrică și Știința Calculatoarelor',
+          role: 'Dean, Faculty of Electrical Engineering and Computer Science',
           photo: 'committee/dan-milici.jpg', //maria_toader.jpg
         },
                 {
@@ -80,14 +80,19 @@ export class Committee {
           role: 'Two times silver medalist ONCS, third place Scientific papers competition',
           photo: 'committee/maria_toader.jpg', //maria_toader.jpg
         },
+                        {
+          name: 'Andrei Preda',
+          role: 'Lecturer, PhD in Engineering at Constanta Maritime University',
+          photo: 'committee/predus.jpeg',
+        },
         {
           name: 'Tatiana Barbaros',
-          role: 'Psiholog, Lector Universitar Dr.',
+          role: 'Psychologist, Lecturer, PhD',
           photo: 'committee/tatiana-barbaros.jpg',
         },
         {
           name: 'Cristina-Elena Ungureanu',
-          role: 'Drd. Ec.',
+          role: 'PhD Candidate (Economics)',
           photo: 'committee/cristina-elena-ungureanu.jpg',
         },
         {
@@ -138,7 +143,7 @@ export class Committee {
       members: [
         {
           name: 'Mădălina Cerșamba',
-          role: 'Asist. Univ. Drd. Ing.',
+          role: 'Assistant Lecturer, PhD Candidate (Eng.)',
           photo: 'committee/madalina-cersamba.jpg',
         },
         {

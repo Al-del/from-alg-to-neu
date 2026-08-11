@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 interface ScheduleEvent {
   title: string;
   time?: string;
+  location?: string;
   description?: string;
   badge?: string;
 }
@@ -32,18 +33,21 @@ export class Home implements OnDestroy {
         {
           title: 'Participant Arrival & Check-in',
           time: '14:00 – 17:00',
+          location: 'Main Hall, Ground Floor (Entrance)',
           description: 'Arrive, settle in, and pick up your badge and welcome kit.',
           badge: 'Arrival',
         },
         {
-          title: 'Scientific Poster Stands',
+          title: 'Scientific Poster Set-Up',
           time: '14:00 – 17:00',
-          description: 'Browse student research posters on display throughout the afternoon.',
+          location: 'Ground Floor (Entrance)',
+          description: 'Set up your poster ahead of the Scientific Corner showcase.',
           badge: 'Exhibition',
         },
         {
-          title: 'Welcome Reception',
+          title: 'Welcoming Ceremony',
           time: '17:00',
+          location: 'Auditorium, First Floor',
           description: 'Meet fellow participants, mentors, and organizers.',
         },
       ],
@@ -53,26 +57,44 @@ export class Home implements OnDestroy {
       date: 'Friday, August 21 — Panels & Workshops Day',
       events: [
         {
-          title: 'Scientific Corner: Presentation & Evaluation',
-          time: '10:00',
+          title: 'Scientific Corner: Poster Showcase',
+          time: '10:00 – 11:00',
+          location: 'Ground Floor (Entrance)',
           badge: 'Scientific Corner',
+        },
+        {
+          title: 'Workshop — Bitmi',
+          time: '10:00 – 12:00',
+          location: 'Room 112',
+          badge: 'Workshop',
         },
         {
           title: 'Panels',
           time: '11:00 – 13:00',
+          location: 'Auditorium, First Floor',
+          description: 'With Dr. Milici, Dr. Raicu, Alex Bordei, and Dr. Cristina Dragomir.',
+        },
+        {
+          title: 'Lunch Break',
+          time: '13:00 – 14:00',
+          location: 'First Floor',
         },
         {
           title: 'Workshop: Signal Reading Machine — Hands-On',
           time: '14:00 – 17:00',
+          location: 'Auditorium, First Floor',
           badge: 'Workshop',
         },
         {
-          title: 'Workshops',
+          title: 'Workshop: AI — David',
           time: '17:00 – 18:00',
+          location: 'Auditorium, First Floor',
+          badge: 'Workshop',
         },
         {
           title: 'Social Night',
           time: '18:00 – 20:00',
+          location: 'First Floor',
         },
       ],
     },
@@ -81,24 +103,43 @@ export class Home implements OnDestroy {
       date: 'Saturday, August 22 — Competition Day',
       events: [
         {
-          title: 'Competitive AI Competition',
+          title: 'AI Competition',
           time: '09:00 – 14:00',
           badge: '5 Hours',
         },
         {
-          title: 'Workshop: Digital Signals',
-          time: '14:00 – 16:00',
+          title: 'Lunch Break',
+          time: '14:00 – 14:30',
+          location: 'First Floor',
+        },
+        {
+          title: 'IEEE Presentation — Cristina & Andrei Popescu',
+          time: '14:30 – 15:30',
+          location: 'Auditorium, First Floor',
+        },
+        {
+          title: 'Workshop: AI — Laurențiu Marian Neagu',
+          time: '15:00 – 16:00',
+          location: 'Room 112',
           badge: 'Workshop',
         },
         {
-          title: 'Workshop: AI',
+          title: 'Workshop: EKG & EMG — Robert',
           time: '16:00 – 17:00',
+          location: 'Auditorium, First Floor',
           badge: 'Workshop',
         },
         {
-          title: 'Hackathon Start Announcement',
+          title: 'Hackathon Announcement',
           time: '17:00',
+          location: 'Auditorium, First Floor',
           badge: 'Hackathon Starts',
+        },
+        {
+          title: 'Problem-Solving Workshop — David',
+          time: '17:30 – 19:00',
+          location: 'Auditorium, First Floor',
+          badge: 'Workshop',
         },
       ],
     },
@@ -107,12 +148,24 @@ export class Home implements OnDestroy {
       date: 'Sunday, August 23 — Hackathon Day',
       events: [
         {
+          title: 'Panels',
+          time: '10:00 – 12:00',
+          location: 'Auditorium, First Floor',
+        },
+        {
           title: 'Competition Scientific Papers',
-          time: '10:00',
+          time: '12:00 – 13:00',
+          location: 'Auditorium, First Floor',
+        },
+        {
+          title: 'Lunch Break',
+          time: '13:00 – 14:00',
+          location: 'First Floor',
         },
         {
           title: 'Hackathon: Project Presentation',
           time: '17:00',
+          location: 'Auditorium, First Floor',
           badge: 'Hackathon',
         },
       ],
@@ -124,10 +177,12 @@ export class Home implements OnDestroy {
         {
           title: 'Insights',
           time: '10:00 – 11:00',
+          location: 'Auditorium, First Floor',
         },
         {
           title: 'Award Ceremony',
           time: '11:00',
+          location: 'Auditorium, First Floor',
           badge: 'Prizes',
         },
         {
