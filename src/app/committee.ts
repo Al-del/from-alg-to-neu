@@ -97,7 +97,7 @@ export class Committee {
         },
         {
           name: 'Cristina Dragomir',
-          role: 'Conf. univ. dr. .',
+          role: 'Associate Professor, PhD in Engineering at Constanta Maritime University',
           photo: 'committee/cristina-dragomir.jpg',
         },
       ],
@@ -148,7 +148,7 @@ export class Committee {
         },
         {
           name: 'Gabriel Raicu',
-          role: 'Conf. univ. dr. ing.',
+          role: 'Rector, Associate Professor, PhD in Engineering at Constanta Maritime University',
           photo: 'committee/gabriel-raicu.jpg',
         },
                {
@@ -158,7 +158,7 @@ export class Committee {
         },
         {
           name: 'Alexandru Pescaru',
-          role: 'Ș.l. univ. dr. ing.',
+          role: 'Lecturer, PhD in Engineering at Constanta Maritime University',
           photo: 'committee/alex-pesc.jpg',
         },
       ],
