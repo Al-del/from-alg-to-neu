@@ -113,7 +113,7 @@ export class Home implements OnDestroy {
           location: 'First Floor',
         },
         {
-          title: 'IEEE Presentation Cristina & Andrei Popescu',
+          title: 'IEEE Presentation Dr. Cristina Ungureanu & Andrei Popescu',
           time: '14:30 – 15:30',
           location: 'Auditorium, First Floor',
         },
