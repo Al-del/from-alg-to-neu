@@ -86,7 +86,7 @@ export class Home implements OnDestroy {
           badge: 'Workshop',
         },
         {
-          title: 'Workshop: AI — David',
+          title: 'Workshop: AI ',
           time: '17:00 – 18:00',
           location: 'Auditorium, First Floor',
           badge: 'Workshop',
@@ -113,7 +113,7 @@ export class Home implements OnDestroy {
           location: 'First Floor',
         },
         {
-          title: 'IEEE Presentation — Cristina & Andrei Popescu',
+          title: 'IEEE Presentation Cristina & Andrei Popescu',
           time: '14:30 – 15:30',
           location: 'Auditorium, First Floor',
         },
@@ -124,7 +124,7 @@ export class Home implements OnDestroy {
           badge: 'Workshop',
         },
         {
-          title: 'Workshop: EKG & EMG — Robert',
+          title: 'Workshop: EKG & EMG',
           time: '16:00 – 17:00',
           location: 'Auditorium, First Floor',
           badge: 'Workshop',
@@ -136,7 +136,7 @@ export class Home implements OnDestroy {
           badge: 'Hackathon Starts',
         },
         {
-          title: 'Problem-Solving Workshop — David',
+          title: 'Problem-Solving Workshop',
           time: '17:30 – 19:00',
           location: 'Auditorium, First Floor',
           badge: 'Workshop',
