@@ -61,7 +61,7 @@ export class Committee {
         },
         {
           name: 'Gabriel Raicu',
-          role: 'Conf. univ. dr. ing.',
+          role: 'Rector, Associate Professor, PhD in Engineering at Constanta Maritime University',
           photo: 'committee/gabriel-raicu.jpg',
         },
       ],
