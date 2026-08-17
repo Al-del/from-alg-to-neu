@@ -151,6 +151,7 @@ export class Home implements OnDestroy {
           title: 'Panels',
           time: '10:00 – 12:00',
           location: 'Auditorium, First Floor',
+          description: 'With Dr. Barbaros Popescu Ungurenu and Alex Bordei.',
         },
         {
           title: 'Competition Scientific Papers',
