@@ -137,7 +137,7 @@ export class Committee {
         },
         {
           name: 'Ciortea-Suciu Andrei',
-          role: 'Silver medal ROAI, silver medal CEOAI',
+          role: 'Gold medal ONIA, silver medal CEOAI',
           photo: 'committee/ciortea-suciu-andrei.jpg',
         },
       ],
