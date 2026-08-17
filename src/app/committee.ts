@@ -75,10 +75,15 @@ export class Committee {
           role: 'Dean, Faculty of Electrical Engineering and Computer Science',
           photo: 'committee/dan-milici.jpg', //maria_toader.jpg
         },
-                {
+          {
           name: 'Maria Toader',
           role: 'Two times silver medalist ONCS, third place Scientific papers competition',
           photo: 'committee/maria_toader.jpg', //maria_toader.jpg
+        },
+                        {
+          name: 'Andrei-Cristian Popescu',
+          role: 'B.Sc. Student in Microelectronics & Nanotechnology, POLITEHNICA Bucharest Student Representative',
+          photo: 'committee/andrei_popescu.jpg',
         },
                         {
           name: 'Andrei Preda',
@@ -87,7 +92,7 @@ export class Committee {
         },
         {
           name: 'Tatiana Barbaros',
-          role: 'Psychologist, Lecturer, PhD',
+          role: 'Psychologist, Lecturer, PhD Ovidius University of Constanta',
           photo: 'committee/tatiana-barbaros.jpg',
         },
         {
