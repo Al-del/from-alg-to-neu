@@ -113,7 +113,7 @@ export class Home implements OnDestroy {
           location: 'First Floor',
         },
         {
-          title: 'IEEE Prfresentation Dr. Cristina Ungureanu & Andrei Popescu',
+          title: 'IEEE Presentation Dr. Cristina Ungureanu & Andrei Popescu',
           time: '14:30 – 15:30',
           location: 'Auditorium, First Floor',
         },
@@ -151,7 +151,7 @@ export class Home implements OnDestroy {
           title: 'Panels',
           time: '10:00 – 12:00',
           location: 'Auditorium, First Floor',
-          description: 'With Dr. Barbaros Popescu Ungurenu and Alex Bordei.',
+          description: 'With Dr. Barbaros Popescu, Ungurenu and Dr. Laurentiu Neagu.',
         },
         {
           title: 'Competition Scientific Papers',
@@ -166,7 +166,7 @@ export class Home implements OnDestroy {
         {
           title: 'Hackathon: Project Presentation',
           time: '17:00',
-          location: 'Auditorium, First Floor',
+          location: 'Room 112',
           badge: 'Hackathon',
         },
       ],
