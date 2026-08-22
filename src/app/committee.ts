@@ -166,6 +166,11 @@ export class Committee {
           role: 'Silver medal CEOAI, IAIO 2027 participant, 1st place ONIA',
           photo: 'committee/dedu-razvan-matei.jpg',
         },
+           {
+          name: 'Ciortea-Suciu Andrei',
+          role: 'Gold medal ONIA, silver medal CEOAI',
+          photo: 'committee/ciortea-suciu-andrei.jpg',
+        },
         {
           name: 'Alexandru Pescaru',
           role: 'Lecturer, PhD in Engineering at Constanta Maritime University',
